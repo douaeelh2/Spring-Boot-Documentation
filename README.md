@@ -1,6 +1,8 @@
 # Spring-Boot-Documentation
 
-![proxy-image](https://github.com/douaeelh2/Spring-Boot-Documentation/assets/127549220/a497c756-fa84-40b6-8d50-e4e813fb4015)
+<div style="text-align:center;">
+  <img src="https://github.com/douaeelh2/Spring-Boot-Documentation/assets/127549220/a497c756-fa84-40b6-8d50-e4e813fb4015" style="width:100%">
+</div> <br /> <br />
 
 This documentation serves as a comprehensive guide to understanding and using Spring Boot effectively, covering everything from getting started to advanced topics and best practices.
 
@@ -133,8 +135,9 @@ Spring Boot is built on the top of the conventional spring framework. So, it pro
 
 ## Spring Boot Architecture
 
-![spring-boot-architecture](https://github.com/douaeelh2/Spring-Boot-Documentation/assets/127549220/3c2ba592-ad0b-44b9-808f-4ee1f1bb2fb9)
-
+<div style="text-align:center;">
+  <img src="https://github.com/douaeelh2/Spring-Boot-Documentation/assets/127549220/3c2ba592-ad0b-44b9-808f-4ee1f1bb2fb9" style="width:100%">
+</div> <br /> <br />
 
 The architecture of Spring Boot is designed to simplify the development and deployment of Spring applications by providing a set of conventions, defaults, and infrastructure support. Here's an overview of the architecture:
 
