@@ -99,7 +99,9 @@ This documentation serves as a comprehensive guide to understanding and using Sp
   
   Solution to this is `Spring Boot`. Spring Boot is built on the top of the spring and contains all the features of spring. And is becoming favourite of developer’s these days because of it’s a rapid production-ready environment which enables the developers to directly focus on the logic instead of struggling with the configuration and set up.
 
+
 ## Features of Spring Boot
+
 Spring Boot is built on the top of the conventional spring framework. So, it provides all the features of spring and is yet easier to use than spring.
 
  - ### It allows to avoid heavy configuration of XML which is present in spring:
@@ -123,3 +125,5 @@ Spring Boot is built on the top of the conventional spring framework. So, it pro
     - In case of monolithic systems, there will be a single code containing all the features which are very tough to maintain on a huge scale.
     - But in the microservice-based system, each feature can be divided into smaller subsystems like service to handle patient registration, service to handle database management, service to handle billing etc.
     Microservice based system can be easily migrated as only some services need to be altered which also makes debugging and deployment easy. Also, each service can be integrated and can be made in different technologies suited to them.
+
+![spring-boot-features](https://github.com/douaeelh2/Spring-Boot-Documentation/assets/127549220/7c509609-4040-4f39-bbce-18a334a439b4)
