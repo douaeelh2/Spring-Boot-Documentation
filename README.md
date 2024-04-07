@@ -333,3 +333,11 @@ Before Spring Boot was introduced, Spring Developers used to spend a lot of time
 
 For example, if you want to use Spring Data JPA for database access, you can include `spring-boot-starter-data-jpa` dependency. 
 
+| Starter                        | Description                                                                                   |
+|--------------------------------|-----------------------------------------------------------------------------------------------|
+| `spring-boot-starter-web`      | Includes dependencies required for building web applications with Spring MVC.                |
+| `spring-boot-starter-data-jpa` | Contains dependencies for using Spring Data JPA for data access.                             |
+| `spring-boot-starter-security` | Provides dependencies for securing Spring applications using Spring Security.                |
+| `spring-boot-starter-test`     | Includes dependencies for testing Spring Boot applications.                                   |
+
+
