@@ -178,3 +178,89 @@ Overall, the architecture of Spring Boot is designed to simplify and streamline 
 | It doesn’t provide support for the in-memory database. | It provides support for the in-memory database such as H2. |
 | Developers need to write boilerplate code for smaller tasks. | In Spring Boot, there is reduction in boilerplate code. |
 | Developers have to define dependencies manually in the pom.xml file. | pom.xml file internally handles the required dependencies. |
+
+
+### Spring Framework : 
+  
+  ```xml
+      <!-- applicationContext.xml -->
+      <beans xmlns="http://www.springframework.org/schema/beans"
+          xmlns:mvc="http://www.springframework.org/schema/mvc"
+          xmlns:context="http://www.springframework.org/schema/context"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="
+              http://www.springframework.org/schema/beans
+              http://www.springframework.org/schema/beans/spring-beans.xsd
+              http://www.springframework.org/schema/mvc
+              http://www.springframework.org/schema/mvc/spring-mvc.xsd
+              http://www.springframework.org/schema/context
+              http://www.springframework.org/schema/context/spring-context.xsd">
+      
+          <context:component-scan base-package="com.example.controller" />
+          <mvc:annotation-driven />
+      
+      </beans>
+  ```
+  
+  
+  ```java
+      package com.example.controller;
+  
+      import org.springframework.stereotype.Controller;
+      import org.springframework.web.bind.annotation.RequestMapping;
+      import org.springframework.web.bind.annotation.RequestMethod;
+      import org.springframework.web.bind.annotation.ResponseBody;
+      
+      @Controller
+      public class HelloController {
+      
+          @RequestMapping(value = "/hello", method = RequestMethod.GET)
+          @ResponseBody
+          public String hello() {
+              return "Hello, World!";
+          }
+      }
+  
+  ```
+
+### Spring Boot : 
+  
+  ```java
+    package com.example.springbootdemo;
+
+    import org.springframework.boot.SpringApplication;
+    import org.springframework.boot.autoconfigure.SpringBootApplication;
+    
+    @SpringBootApplication
+    public class SpringBootDemoApplication {
+    
+        public static void main(String[] args) {
+            SpringApplication.run(SpringBootDemoApplication.class, args);
+        }
+    }
+
+  ```
+  
+  
+  ```java
+     package com.example.controller;
+
+      import org.springframework.stereotype.Controller;
+      import org.springframework.web.bind.annotation.RequestMapping;
+      import org.springframework.web.bind.annotation.RequestMethod;
+      import org.springframework.web.bind.annotation.ResponseBody;
+      
+      @Controller
+      public class HelloController {
+      
+          @RequestMapping(value = "/hello", method = RequestMethod.GET)
+          @ResponseBody
+          public String hello() {
+              return "Hello, World!";
+          }
+      }
+
+  
+  ```
+
+
