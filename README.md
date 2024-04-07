@@ -353,19 +353,19 @@ For example, if you want to use Spring Data JPA for database access, you can inc
 Spring Boot Annotations List
 Some of the annotations that are available in this category are:
 
-  `@SpringBootApplication`
-  `@SpringBootConfiguration`
-  `@EnableAutoConfiguration`
-  `@ComponentScan`
+ - `@SpringBootApplication`
+ - `@SpringBootConfiguration`
+ - `@EnableAutoConfiguration`
+ - `@ComponentScan`
   
 Auto-Configuration Conditions
-    `@ConditionalOnClass`, and `@ConditionalOnMissingClass`
-    `@ConditionalOnBean`, and `@ConditionalOnMissingBean`
-    `@ConditionalOnProperty`
-    `@ConditionalOnResource`
-    `@ConditionalOnWebApplication and @ConditionalOnNotWebApplication`
-    `@ConditionalExpression`
-    `@Conditional`
+   - `@ConditionalOnClass`, and `@ConditionalOnMissingClass`
+   - `@ConditionalOnBean`, and `@ConditionalOnMissingBean`
+   - `@ConditionalOnProperty`
+   - `@ConditionalOnResource`
+   - `@ConditionalOnWebApplication and @ConditionalOnNotWebApplication`
+   - `@ConditionalExpression`
+   - `@Conditional`
     
 -  `@SpringBootApplication` Annotation
 This annotation is used to mark the main class of a Spring Boot application. It encapsulates @SpringBootConfiguration, @EnableAutoConfiguration, and @ComponentScan annotations with their default attributes.
