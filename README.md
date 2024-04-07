@@ -167,13 +167,14 @@ Overall, the architecture of Spring Boot is designed to simplify and streamline 
 
 ## Difference Between Spring and Spring Boot
 
-| Feature                                           | Spring                                           | Spring Boot                                     |
-|---------------------------------------------------|--------------------------------------------------|-------------------------------------------------|
-| Overview                                          | Spring is an open-source lightweight framework widely used to develop enterprise applications. | Spring Boot is built on top of the conventional Spring framework, widely used to develop REST APIs. |
-| Dependency Injection                             | The most important feature of the Spring Framework is dependency injection. | The most important feature of Spring Boot is Autoconfiguration. |
-| Application Type                                 | Helps to create a loosely coupled application. | Helps to create a stand-alone application. |
-| Server Configuration                             | To run the Spring application, we need to set the server explicitly. | Spring Boot provides embedded servers such as Tomcat and Jetty etc. |
-| Deployment Descriptor                            | To run the Spring application, a deployment descriptor is required. | There is no requirement for a deployment descriptor. |
-| Code Generation                                  | Developers need to write lots of code. | It reduces the lines of code. |
-| In-memory Database Support                       | It doesn’t provide support for the in-memory database. | It provides support for the in-memory database such as H2. |
-| Boilerplate Code                                 | Developers have to define dependencies manually in the pom.xml file. | pom.xml file internally handles the required dependencies. |
+| Spring                                             | Spring Boot                                     |
+|----------------------------------------------------|-------------------------------------------------|
+| Spring is an open-source lightweight framework widely used to develop enterprise applications. | Spring Boot is built on top of the conventional spring framework, widely used to develop REST APIs. |
+| The most important feature of the Spring Framework is dependency injection. | The most important feature of Spring Boot is Autoconfiguration. |
+| It helps to create a loosely coupled application. | It helps to create a stand-alone application. |
+| To run the Spring application, we need to set the server explicitly. | Spring Boot provides embedded servers such as Tomcat and Jetty etc. |
+| To run the Spring application, a deployment descriptor is required. | There is no requirement for a deployment descriptor. |
+| To create a Spring application, the developers write lots of code. | It reduces the lines of code. |
+| It doesn’t provide support for the in-memory database. | It provides support for the in-memory database such as H2. |
+| Developers need to write boilerplate code for smaller tasks. | In Spring Boot, there is reduction in boilerplate code. |
+| Developers have to define dependencies manually in the pom.xml file. | pom.xml file internally handles the required dependencies. |
