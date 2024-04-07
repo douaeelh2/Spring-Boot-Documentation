@@ -179,6 +179,7 @@ Overall, the architecture of Spring Boot is designed to simplify and streamline 
 | Developers need to write boilerplate code for smaller tasks. | In Spring Boot, there is reduction in boilerplate code. |
 | Developers have to define dependencies manually in the pom.xml file. | pom.xml file internally handles the required dependencies. |
 
+### Example 1 : Configuration for Spring MVC
 
 ### Spring Framework : 
   
@@ -223,6 +224,7 @@ Overall, the architecture of Spring Boot is designed to simplify and streamline 
   
   ```
 
+
 ### Spring Boot : 
   
   ```java
@@ -261,6 +263,69 @@ Overall, the architecture of Spring Boot is designed to simplify and streamline 
       }
 
   
+  ```
+
+### Example 2 : Hibernate Configuration
+
+### Spring Framwork : 
+  
+  ```xml
+   <!-- applicationContext.xml -->
+    <beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:tx="http://www.springframework.org/schema/tx"
+        xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/tx
+            http://www.springframework.org/schema/tx/spring-tx.xsd
+            http://www.springframework.org/schema/data/jpa
+            http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+    
+        <context:component-scan base-package="com.example" />
+    
+        <bean id="entityManagerFactory"
+            class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+            <property name="dataSource" ref="dataSource" />
+            <property name="packagesToScan" value="com.example.model" />
+            <property name="jpaVendorAdapter">
+                <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+            </property>
+        </bean>
+    
+        <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+            <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+            <property name="url" value="jdbc:mysql://localhost:3306/library" />
+            <property name="username" value="root" />
+            <property name="password" value="password" />
+        </bean>
+    
+        <tx:annotation-driven />
+    
+        <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+            <property name="entityManagerFactory" ref="entityManagerFactory" />
+        </bean>
+    </beans>
+
+  ```
+
+  ### Spring Boot
+  
+  ```yml
+     # application.yml
+      spring:
+        datasource:
+          url: jdbc:mysql://localhost:3306/library
+          username: root
+          password: password
+        jpa:
+          hibernate:
+            ddl-auto: update
+          show-sql: true 
   ```
 
 
