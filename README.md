@@ -11,9 +11,8 @@ This documentation serves as a comprehensive guide to understanding and using Sp
  1. [Introduction to Spring Boot](#introduction-to-spring-boot)
       - [What is Spring Boot?](#what-is-spring-boot)
       - [Features of Spring Boot](#features-of-spring-boot)
-      - [Spring Boot Architecture](#spring-boot-architecture)
       - [Difference Between Spring and Spring Boot](#difference-between-spring-and-spring-boot)
-      - [Getting Started](#getting-started)
+      - [Spring Boot Architecture](#spring-boot-architecture)
    
  2. [Core Concepts](#core-concepts)
       - [Spring Boot Starter](#spring-boot-starter)
@@ -129,40 +128,6 @@ Spring Boot is built on the top of the conventional spring framework. So, it pro
     - In case of monolithic systems, there will be a single code containing all the features which are very tough to maintain on a huge scale.
     - But in the microservice-based system, each feature can be divided into smaller subsystems like service to handle patient registration, service to handle database management, service to handle billing etc.
     Microservice based system can be easily migrated as only some services need to be altered which also makes debugging and deployment easy. Also, each service can be integrated and can be made in different technologies suited to them.
-
-
-
-
-## Spring Boot Architecture
-
-<div style="text-align:center;">
-  <img src="https://github.com/douaeelh2/Spring-Boot-Documentation/assets/127549220/b62c6992-c928-4055-bc50-5b251f30c304" style="width:100%">
-</div> <br /> <br />
-
-The architecture of Spring Boot is designed to simplify the development and deployment of Spring applications by providing a set of conventions, defaults, and infrastructure support. Here's an overview of the architecture:
-
- - ### Auto-Configuration:
-Spring Boot's auto-configuration feature automatically configures the Spring application based on the dependencies present in the classpath. It scans the classpath and configures beans and components based on certain conditions and default settings. This eliminates the need for manual configuration, reducing boilerplate code and improving developer productivity.
-
- - ### Starter Dependencies:
-Spring Boot provides a set of starter dependencies, which are pre-packaged dependencies containing all the necessary libraries and configurations for specific functionalities such as web development, data access, security, etc. These starter dependencies allow developers to quickly bootstrap their applications by including only the dependencies they need, without worrying about version compatibility or configuration.
-
- - ### Embedded Servers:
-Spring Boot allows embedding servlet containers like Tomcat, Jetty, or Undertow directly into the application. This means that the application can be run as a standalone executable JAR file without requiring an external application server. Embedded servers simplify deployment and make it easier to build self-contained, portable applications.
-
- - ### Spring Boot Actuator:
-Spring Boot Actuator provides production-ready features to monitor and manage the application. It exposes various endpoints that provide information about the application's health, metrics, environment, etc. Actuator endpoints can be used for monitoring, auditing, and troubleshooting purposes, making it easier to manage applications in production environments.
-
- - ### Externalized Configuration:
-Spring Boot allows externalizing configuration properties from the application code to external configuration files such as YAML or properties files. This allows configuration properties to be easily modified without requiring code changes, making the application more configurable and easier to manage across different environments.
-
- - ### Spring Boot CLI:
-Spring Boot CLI (Command Line Interface) allows developers to quickly prototype and develop Spring Boot applications using a command-line interface. It provides features such as auto-restarting, dependency resolution, and script execution, making it easier to develop and test Spring Boot applications without requiring a full-fledged IDE.
-
- - ### Production-Ready Features:
-Spring Boot provides several production-ready features such as metrics, health checks, and security configurations out-of-the-box. These features help developers build robust, scalable, and secure applications with minimal effort.
-
-Overall, the architecture of Spring Boot is designed to simplify and streamline the development and deployment process of Spring applications, allowing developers to focus more on writing business logic and less on boilerplate code and configuration.
 
 
 ## Difference Between Spring and Spring Boot
@@ -327,5 +292,41 @@ Overall, the architecture of Spring Boot is designed to simplify and streamline 
             ddl-auto: update
           show-sql: true 
   ```
+
+## Spring Boot Architecture
+
+<div style="text-align:center;">
+  <img src="https://github.com/douaeelh2/Spring-Boot-Documentation/assets/127549220/b62c6992-c928-4055-bc50-5b251f30c304" style="width:100%">
+</div> <br /> <br />
+
+The architecture of Spring Boot is designed to simplify the development and deployment of Spring applications by providing a set of conventions, defaults, and infrastructure support. Here's an overview of the architecture:
+
+ - ### Auto-Configuration:
+Spring Boot's auto-configuration feature automatically configures the Spring application based on the dependencies present in the classpath. It scans the classpath and configures beans and components based on certain conditions and default settings. This eliminates the need for manual configuration, reducing boilerplate code and improving developer productivity.
+
+ - ### Starter Dependencies:
+Spring Boot provides a set of starter dependencies, which are pre-packaged dependencies containing all the necessary libraries and configurations for specific functionalities such as web development, data access, security, etc. These starter dependencies allow developers to quickly bootstrap their applications by including only the dependencies they need, without worrying about version compatibility or configuration.
+
+ - ### Embedded Servers:
+Spring Boot allows embedding servlet containers like Tomcat, Jetty, or Undertow directly into the application. This means that the application can be run as a standalone executable JAR file without requiring an external application server. Embedded servers simplify deployment and make it easier to build self-contained, portable applications.
+
+ - ### Spring Boot Actuator:
+Spring Boot Actuator provides production-ready features to monitor and manage the application. It exposes various endpoints that provide information about the application's health, metrics, environment, etc. Actuator endpoints can be used for monitoring, auditing, and troubleshooting purposes, making it easier to manage applications in production environments.
+
+ - ### Externalized Configuration:
+Spring Boot allows externalizing configuration properties from the application code to external configuration files such as YAML or properties files. This allows configuration properties to be easily modified without requiring code changes, making the application more configurable and easier to manage across different environments.
+
+ - ### Spring Boot CLI:
+Spring Boot CLI (Command Line Interface) allows developers to quickly prototype and develop Spring Boot applications using a command-line interface. It provides features such as auto-restarting, dependency resolution, and script execution, making it easier to develop and test Spring Boot applications without requiring a full-fledged IDE.
+
+ - ### Production-Ready Features:
+Spring Boot provides several production-ready features such as metrics, health checks, and security configurations out-of-the-box. These features help developers build robust, scalable, and secure applications with minimal effort.
+
+Overall, the architecture of Spring Boot is designed to simplify and streamline the development and deployment process of Spring applications, allowing developers to focus more on writing business logic and less on boilerplate code and configuration.
+
+
+
+# Core Concepts 
+  ## Spring Boot Starter
 
 
