@@ -350,57 +350,51 @@ For example, if you want to use Spring Data JPA for database access, you can inc
 
   Spring annotations are present in the org.springframework.boot.autoconfigure and org.springframework.boot.autoconfigure.condition packages are commonly known as Spring Boot annotations.
 
-Spring Boot Annotations List
-Some of the annotations that are available in this category are:
+In Spring Boot, configuration annotations are special directives that allow configuring various aspects of your application. These annotations facilitate configuration and management of application components, reducing the need for explicit XML configuration.
 
  - `@SpringBootApplication`
  - `@SpringBootConfiguration`
  - `@EnableAutoConfiguration`
  - `@ComponentScan`
+
   
-Auto-Configuration Conditions
-   - `@ConditionalOnClass`, and `@ConditionalOnMissingClass`
-   - `@ConditionalOnBean`, and `@ConditionalOnMissingBean`
-   - `@ConditionalOnProperty`
-   - `@ConditionalOnResource`
-   - `@ConditionalOnWebApplication and @ConditionalOnNotWebApplication`
-   - `@ConditionalExpression`
-   - `@Conditional`
-    
 -  `@SpringBootApplication` Annotation
-This annotation is used to mark the main class of a Spring Boot application. It encapsulates @SpringBootConfiguration, @EnableAutoConfiguration, and @ComponentScan annotations with their default attributes.
+This annotation is used to mark the main class of the Spring Boot application. It combines three annotations: `@Configuration`, `@EnableAutoConfiguration`, and `@ComponentScan`. It specifies that the class is a Spring Boot configuration and automatically activates configuration based on project `dependencies`.
+
 
 ![SpringBoot-Annotation](https://github.com/douaeelh2/Spring-Boot-Documentation/assets/127549220/44c7fe8e-9c31-4299-82bc-1242bb2625cf)
 
 
-  ```java
+   ```java
+       import org.springframework.boot.SpringApplication;
+       import org.springframework.boot.autoconfigure.SpringBootApplication;
+      
       @SpringBootApplication
-    public class DemoApplication { 
+      public class MyApplication {
       
-        public static void main(String[] args) 
-        { 
-      
-            SpringApplication.run(DemoApplication.class, args); 
-        } 
-    }
-  ```
+          public static void main(String[] args) {
+              SpringApplication.run(MyApplication.class, args);
+          }
+      }
+
+    ```
+
 
 - `@SpringBootConfiguration` Annotation
   It is a class-level annotation that is part of the Spring Boot framework. It implies that a class provides Spring Boot application configuration. It can be used as an alternative to Spring’s standard `@Configuration` annotation so that configuration can be found automatically. Most Spring Boot Applications use `@SpringBootConfiguration` via `@SpringBootApplication`. If an application uses `@SpringBootApplication`, it is already using @SpringBootConfiguration.
 
   ```java
-       @SpringBootConfiguration
-      public class Application { 
-        
-          public static void main(String[] args) { 
-              SpringApplication.run(Application.class, args); 
-          } 
-        
-          @Bean
-          public StudentService studentService() { 
-              return new StudentServiceImpl(); 
-          } 
+       import org.springframework.boot.SpringApplication;
+       import org.springframework.boot.autoconfigure.SpringBootApplication;
+      
+      @SpringBootApplication
+      public class MyApplication {
+      
+          public static void main(String[] args) {
+              SpringApplication.run(MyApplication.class, args);
+          }
       }
+
     ```
 
 
