@@ -165,7 +165,7 @@ Spring Boot provides several production-ready features such as metrics, health c
 Overall, the architecture of Spring Boot is designed to simplify and streamline the development and deployment process of Spring applications, allowing developers to focus more on writing business logic and less on boilerplate code and configuration.
 
 
-# Comparison between Spring and Spring Boot
+## Difference Between Spring and Spring Boot
 
 | Feature                                           | Spring                                           | Spring Boot                                     |
 |---------------------------------------------------|--------------------------------------------------|-------------------------------------------------|
