@@ -15,7 +15,7 @@ This documentation serves as a comprehensive guide to understanding and using Sp
       - [Spring Boot Architecture](#spring-boot-architecture)
    
  2. [Core Concepts](#core-concepts)
-      - [Spring Boot Starter](#spring-boot-starter)
+      - [Spring Boot Starters](#spring-boot-starters)
       - [Spring Boot Auto-Configuration](#spring-boot-auto-configuration)
       - [Spring Boot Actuator](#spring-boot-actuator)
       - [Spring Boot CLI](#spring-boot-cli)
@@ -94,7 +94,7 @@ This documentation serves as a comprehensive guide to understanding and using Sp
 
 # 1. Introduction to Spring Boot 
 
-  ## What is Spring Boot ?
+  # What is Spring Boot ?
   
   Spring is widely used for creating scalable applications. For web applications Spring provides
   Spring MVC which is a widely used module of spring which is used to create scalable web applications.
@@ -103,7 +103,7 @@ This documentation serves as a comprehensive guide to understanding and using Sp
   Solution to this is `Spring Boot`. Spring Boot is built on the top of the spring and contains all the features of spring. And is becoming favourite of developer’s these days because of it’s a rapid production-ready environment which enables the developers to directly focus on the logic instead of struggling with the configuration and set up.
 
 
-## Features of Spring Boot
+# Features of Spring Boot
 
 Spring Boot is built on the top of the conventional spring framework. So, it provides all the features of spring and is yet easier to use than spring.
 
@@ -130,7 +130,7 @@ Spring Boot is built on the top of the conventional spring framework. So, it pro
     Microservice based system can be easily migrated as only some services need to be altered which also makes debugging and deployment easy. Also, each service can be integrated and can be made in different technologies suited to them.
 
 
-## Difference Between Spring and Spring Boot
+# Difference Between Spring and Spring Boot
 
 | Spring                                             | Spring Boot                                     |
 |----------------------------------------------------|-------------------------------------------------|
@@ -293,7 +293,7 @@ Spring Boot is built on the top of the conventional spring framework. So, it pro
           show-sql: true 
   ```
 
-## Spring Boot Architecture
+# Spring Boot Architecture
 
 <div style="text-align:center;">
   <img src="https://github.com/douaeelh2/Spring-Boot-Documentation/assets/127549220/b62c6992-c928-4055-bc50-5b251f30c304" style="width:100%">
@@ -327,6 +327,6 @@ Overall, the architecture of Spring Boot is designed to simplify and streamline 
 
 
 # Core Concepts 
-  ## Spring Boot Starter
+  # Spring Boot Starters
 
 
