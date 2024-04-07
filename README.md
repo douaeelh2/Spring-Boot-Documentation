@@ -346,3 +346,4 @@ For example, if you want to use Spring Data JPA for database access, you can inc
 | `spring-boot-starter-actuator`        | Includes dependencies for monitoring and managing Spring Boot applications.                                    |
 
 
+  # Spring Boot Auto-Configuration
