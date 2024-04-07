@@ -335,15 +335,13 @@ For example, if you want to use Spring Data JPA for database access, you can inc
 
 | Starter                               | Description                                                                                                    |
 |---------------------------------------|----------------------------------------------------------------------------------------------------------------|
-| `spring-boot-starter-jdbc`            | Includes dependencies for JDBC (Java Database Connectivity) support.                                           |
-| `spring-boot-starter-mail`            | Contains dependencies for sending emails using JavaMailSender.                                                 |
-| `spring-boot-starter-cache`           | Provides dependencies for caching support in Spring applications.                                               |
-| `spring-boot-starter-validation`      | Includes dependencies for validation support in Spring applications.                                           |
-| `spring-boot-starter-batch`           | Contains dependencies for building batch processing applications with Spring Batch.                             |
-| `spring-boot-starter-logging`         | Provides dependencies for logging with Logback as the default logging implementation.                          |
+| `spring-boot-starter-web`      | Includes dependencies required for building web applications with Spring MVC.                                         |
+| `spring-boot-starter-data-jpa` | Contains dependencies for using Spring Data JPA for data access.                                                      |
+| `spring-boot-starter-security` | Provides dependencies for securing Spring applications using Spring Security.                                         |
+| `spring-boot-starter-test`     | Includes dependencies for testing Spring Boot applications.                                                           |
 | `spring-boot-starter-websocket`       | Includes dependencies for building WebSocket-based applications.                                               |
 | `spring-boot-starter-oauth2-client`   | Provides dependencies for OAuth 2.0 client support.                                                            |
-| `spring-boot-starter-oauth2-resource-server` | Contains dependencies for OAuth 2.0 resource server support.                                                 |
+| `spring-boot-starter-oauth2-resource-server` | Contains dependencies for OAuth 2.0 resource server support.                                            |
 | `spring-boot-starter-thymeleaf`       | Includes dependencies for using Thymeleaf as the template engine in Spring MVC applications.                   |
 | `spring-boot-starter-actuator`        | Includes dependencies for monitoring and managing Spring Boot applications.                                    |
 
