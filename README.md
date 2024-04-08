@@ -19,7 +19,6 @@ This documentation serves as a comprehensive guide to understanding and using Sp
       - [Spring Boot Auto-Configuration](#spring-boot-auto-configuration)
       - [Spring Boot Actuator](#spring-boot-actuator)
       - [Spring Boot CLI](#spring-boot-cli)
-
       - [Spring Boot Profiles](#spring-boot-profiles)
    
  3. [Building Blocks](#building-blocks)
@@ -452,3 +451,17 @@ This annotation is used to mark the main class of the Spring Boot application. I
 | HTTP Traces       | `/actuator/httptrace`  | Provides detailed information on incoming HTTP requests.                                      |
 | Beans             | `/actuator/beans`      | Provides information about the beans managed by the application.                               |
 | Environment       | `/actuator/env`        | Provides information about the application's environment.                                      |
+
+
+# Spring Boot CLI
+
+`Spring Boot CLI` (Command Line Interface) is a powerful tool for quickly creating Spring Boot applications from the command line. It provides a simple and efficient way to start Spring Boot projects without having to manually configure a project from scratch.
+
+
+| Feature                  | Command                                         | Description                                                                                     |
+|--------------------------|-------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| Rapid Project Creation   | `spring init --dependencies=<dependencies>`     | Quickly create Spring Boot projects using simple commands. For example, with `spring init`, you can create a new project with necessary dependencies and basic structure by specifying the project name and desired dependencies.|
+| Development Ease         | `spring run <MainClassName>.groovy`             | Easily develop and test Spring Boot applications directly from the command line, speeding up the development and debugging process. You can also use commands like `spring run` to launch your application.|
+| Groovy Support           | N/A                                             | Spring Boot CLI is primarily based on Groovy, a dynamic programming language for the Java platform. This allows you to write Groovy scripts to configure and customize your Spring Boot applications in a concise and expressive manner.|
+| Maven and Gradle Integration | `spring convert`                             | While Spring Boot CLI is a standalone tool, it seamlessly integrates with Maven and Gradle. You can use Maven or Gradle build configuration files to manage dependencies and packaging of your application, while leveraging the rapid creation features of Spring Boot CLI.|
+| Simplified Deployment    | `spring jar <output.jar> <MainClassName>.groovy` | Once your application is developed, Spring Boot CLI offers features to create standalone JAR executables, simplifying the deployment and execution of your applications on any Java-compatible platform.|
