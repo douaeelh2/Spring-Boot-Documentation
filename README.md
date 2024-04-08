@@ -21,44 +21,36 @@ This documentation serves as a comprehensive guide to understanding and using Sp
       - [Spring Boot CLI](#spring-boot-cli)
       - [Spring Boot Profiles](#spring-boot-profiles)
    
- 3. [Building Blocks](#building-blocks)
-      - [Spring Boot Initializr](#spring-boot-initializr)
-      - [Maven and Gradle Setup](#maven-and-gradle-setup)
-      - [Application Properties](#application-properties)
-      - [External Configuration](#external-configuration)
-      - [Logging with Spring Boot](#logging-with-spring-boot)
-      - [Error Handling](#error-handling)
-   
- 4. [Web Development with Spring Boot](#web-development-with-spring-boot)
-      - [Building RESTful APIs](#building-restful-apis)
+ 3. [Web Development with Spring Boot](#web-development-with-spring-boot)
       - [MVC with Spring Boot](#mvc-with-spring-boot)
       - [Thymeleaf Templates](#thymeleaf-templates)
+      - [Building RESTful APIs](#building-restful-apis)
       - [WebSockets](#websockets)
    
- 5. [Data Access](#data-access)
+ 4. [Data Access](#data-access)
       - [Spring Data JPA](#spring-data-jpa)
       - [Spring Data JDBC](#spring-data-jdbc)
       - [Using QueryDSL](#using-querydsl)
       - [Transaction Management](#transaction-management)
       
- 6. [Security](#security)
+ 5. [Security](#security)
       - [Authentication and Authorization](#authentication-and-authorization)
       - [Securing REST APIs](#securing-rest-apis)
       - [OAuth2 with Spring Boot](#oauth2-with-spring-boot)
       
- 7. [Testing](#testing)
+ 6. [Testing](#testing)
       - [Unit Testing with JUnit and Mockito](#unit-testing-with-junit-and-mockito)
       - [Integration Testing](#integration-testing)
       - [Testing Web Applications](#testing-web-applications)
    
- 8. [Advanced Topics](#advanced-topics)
+ 7. [Advanced Topics](#advanced-topics)
       - [Spring Boot DevTools](#spring-boot-devtools)
       - [Actuator Endpoints](#actuator-endpoints)
       - [Spring Boot Testing Utilities](#spring-boot-testing-utilities)
       - [Deployment Strategies](#deployment-strategies)
       - [Monitoring and Metrics](#monitoring-and-metrics)
    
- 9. [Integrations](#integrations)
+ 8. [Integrations](#integrations)
       - [Database Integration](#database-integration)
       - [Messaging with Spring Boot](#messaging-with-spring-boot)
       - [Integrating with External APIs](#integrating-with-external-apis)
@@ -466,3 +458,8 @@ This annotation is used to mark the main class of the Spring Boot application. I
 | Groovy Support           | N/A                                             | Spring Boot CLI is primarily based on Groovy, a dynamic programming language for the Java platform. This allows you to write Groovy scripts to configure and customize your Spring Boot applications in a concise and expressive manner.|
 | Maven and Gradle Integration | `spring convert`                             | While Spring Boot CLI is a standalone tool, it seamlessly integrates with Maven and Gradle. You can use Maven or Gradle build configuration files to manage dependencies and packaging of your application, while leveraging the rapid creation features of Spring Boot CLI.|
 | Simplified Deployment    | `spring jar <output.jar> <MainClassName>.groovy` | Once your application is developed, Spring Boot CLI offers features to create standalone JAR executables, simplifying the deployment and execution of your applications on any Java-compatible platform.|
+
+
+
+# Web Development with Spring Boot
+  # Spring MVC with Spring Boot
