@@ -452,8 +452,7 @@ This annotation is used to mark the main class of the Spring Boot application. I
 | Beans             | `/actuator/beans`      | Provides information about the beans managed by the application.                               |
 | Environment       | `/actuator/env`        | Provides information about the application's environment.                                      |
 
-<br /> <br /> <br />
-
+<br /> <br />
 
 # Spring Boot CLI
 
