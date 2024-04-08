@@ -453,6 +453,8 @@ This annotation is used to mark the main class of the Spring Boot application. I
 | Environment       | `/actuator/env`        | Provides information about the application's environment.                                      |
 
 
+
+
 # Spring Boot CLI
 
 `Spring Boot CLI` (Command Line Interface) is a powerful tool for quickly creating Spring Boot applications from the command line. It provides a simple and efficient way to start Spring Boot projects without having to manually configure a project from scratch.
