@@ -21,36 +21,37 @@ This documentation serves as a comprehensive guide to understanding and using Sp
       - [Spring Boot CLI](#spring-boot-cli)
       - [Spring Boot Profiles](#spring-boot-profiles)
    
- 3. [Web Development with Spring Boot](#web-development-with-spring-boot)
-      - [MVC with Spring Boot](#mvc-with-spring-boot)
-      - [Thymeleaf Templates](#thymeleaf-templates)
-      - [Building RESTful APIs](#building-restful-apis)
-      - [WebSockets](#websockets)
-   
- 4. [Data Access](#data-access)
+  3. [Spring Data JPA and Hibernate](#spring-data-JPA-and-hibernate)
+      - [Spring Data Annotations](#spring-data-annotations)
       - [Spring Data JPA](#spring-data-jpa)
       - [Spring Data JDBC](#spring-data-jdbc)
       - [Using QueryDSL](#using-querydsl)
       - [Transaction Management](#transaction-management)
-      
- 5. [Security](#security)
+   
+ 5. [Web Development with Spring Boot](#web-development-with-spring-boot)
+      - [MVC with Spring Boot](#mvc-with-spring-boot)
+      - [Thymeleaf Templates](#thymeleaf-templates)
+      - [Building RESTful APIs](#building-restful-apis)
+      - [WebSockets](#websockets)
+        
+ 6. [Security](#security)
       - [Authentication and Authorization](#authentication-and-authorization)
       - [Securing REST APIs](#securing-rest-apis)
       - [OAuth2 with Spring Boot](#oauth2-with-spring-boot)
       
- 6. [Testing](#testing)
+ 7. [Testing](#testing)
       - [Unit Testing with JUnit and Mockito](#unit-testing-with-junit-and-mockito)
       - [Integration Testing](#integration-testing)
       - [Testing Web Applications](#testing-web-applications)
    
- 7. [Advanced Topics](#advanced-topics)
+ 8. [Advanced Topics](#advanced-topics)
       - [Spring Boot DevTools](#spring-boot-devtools)
       - [Actuator Endpoints](#actuator-endpoints)
       - [Spring Boot Testing Utilities](#spring-boot-testing-utilities)
       - [Deployment Strategies](#deployment-strategies)
       - [Monitoring and Metrics](#monitoring-and-metrics)
    
- 8. [Integrations](#integrations)
+ 9. [Integrations](#integrations)
       - [Database Integration](#database-integration)
       - [Messaging with Spring Boot](#messaging-with-spring-boot)
       - [Integrating with External APIs](#integrating-with-external-apis)
@@ -462,4 +463,35 @@ This annotation is used to mark the main class of the Spring Boot application. I
 
 
 # Web Development with Spring Boot
-  # Spring MVC with Spring Boot
+  # Spring Boot Project Tree
+
+  project
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── example
+│   │   │           └── myproject
+│   │   │               ├── controller
+│   │   │               ├── service
+│   │   │               ├── repository
+│   │   │               ├── model
+│   │   │               └── Application.java
+│   │   └── resources
+│   │       ├── static
+│   │       ├── templates
+│   │       ├── application.properties
+│   │       └── log4j2.xml
+│   └── test
+│       ├── java
+│       │   └── com
+│       │       └── example
+│       │           └── myproject
+│       │               └── service
+│       └── resources
+│           └── application-test.properties
+├── target
+├── pom.xml
+├── .gitignore
+└── README.md
+
