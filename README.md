@@ -295,11 +295,12 @@ Spring Boot is built on the top of the conventional spring framework. So, it pro
 
 # Spring Boot Architecture
 
+The architecture of Spring Boot is designed to simplify the development and deployment of Spring applications by providing a set of conventions, defaults, and infrastructure support. Here's an overview of the architecture:
+
 <div style="text-align:center;">
   <img src="https://github.com/douaeelh2/Spring-Boot-Documentation/assets/127549220/b62c6992-c928-4055-bc50-5b251f30c304" style="width:100%">
 </div> <br /> <br />
 
-The architecture of Spring Boot is designed to simplify the development and deployment of Spring applications by providing a set of conventions, defaults, and infrastructure support. Here's an overview of the architecture:
 
  - ### Auto-Configuration:
 Spring Boot's auto-configuration feature automatically configures the Spring application based on the dependencies present in the classpath. It scans the classpath and configures beans and components based on certain conditions and default settings. This eliminates the need for manual configuration, reducing boilerplate code and improving developer productivity.
