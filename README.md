@@ -377,10 +377,9 @@ This annotation is used to mark the main class of the Spring Boot application. I
           }
       }
 
-    ```
+  ```
 
-
-- `@SpringBootConfiguration` Annotation
+ - `@SpringBootConfiguration` Annotation
   It is a class-level annotation that is part of the Spring Boot framework. It implies that a class provides Spring Boot application configuration. It can be used as an alternative to Spring’s standard `@Configuration` annotation so that configuration can be found automatically. Most Spring Boot Applications use `@SpringBootConfiguration` via `@SpringBootApplication`. If an application uses `@SpringBootApplication`, it is already using @SpringBootConfiguration.
 
   ```java
@@ -395,6 +394,6 @@ This annotation is used to mark the main class of the Spring Boot application. I
           }
       }
 
-    ```
+  ```
 
 
