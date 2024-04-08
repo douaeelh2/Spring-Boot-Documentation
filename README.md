@@ -415,7 +415,8 @@ This annotation is used to mark the main class of the Spring Boot application. I
   - By default, when you annotate your main class with `@SpringBootApplication`, it is often located in the root package of your application. Spring Boot automatically scans the package of this main class and its sub-packages for components to register.
 
 
-  - `@EnableAutoConfiguration:` This annotation is a powerful feature of Spring Boot that automatically configures the Spring application based on the jars available on the classpath and other factors such as properties files. It's what enables Spring Boot's magic of "convention over configuration".
+
+- `@EnableAutoConfiguration:` This annotation is a powerful feature of Spring Boot that automatically configures the Spring application based on the jars available on the classpath and other factors such as properties files. It's what enables Spring Boot's magic of "convention over configuration".
   
 
  ```java
