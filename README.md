@@ -19,7 +19,7 @@ This documentation serves as a comprehensive guide to understanding and using Sp
       - [Spring Boot Auto-Configuration](#spring-boot-auto-configuration)
       - [Spring Boot Actuator](#spring-boot-actuator)
       - [Spring Boot CLI](#spring-boot-cli)
-      - [Spring Boot Annotations](#spring-boot-annotations)
+
       - [Spring Boot Profiles](#spring-boot-profiles)
    
  3. [Building Blocks](#building-blocks)
@@ -434,3 +434,18 @@ This annotation is used to mark the main class of the Spring Boot application. I
   }
 
   ```
+
+  # Spring Boot Actuator
+
+  - `Spring Boot Actuator` is a Spring Boot `module` that provides functionality for monitoring and managing Spring Boot applications. It provides ready-to-use RESTful endpoints that can be used to monitor different aspects of the running application, as well as interact with it to obtain information about its status, health, metrics, etc.
+
+
+| Feature           | Endpoint               | Description                                                                                   |
+|-------------------|------------------------|-----------------------------------------------------------------------------------------------|
+| Health            | `/actuator/health`     | Provides the health status of the application, indicating if it's running correctly or not.  |
+| Info              | `/actuator/info`       | Provides general information about the application, such as its version and description.      |
+| Metrics           | `/actuator/metrics`    | Provides metrics on different aspects of the application, such as HTTP requests.              |
+| Audit             | `/actuator/auditevents`| Provides information on the audit events of the application.                                  |
+| HTTP Traces       | `/actuator/httptrace`  | Provides detailed information on incoming HTTP requests.                                      |
+| Beans             | `/actuator/beans`      | Provides information about the beans managed by the application.                               |
+| Environment       | `/actuator/env`        | Provides information about the application's environment.                                      |
