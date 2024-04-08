@@ -439,6 +439,8 @@ This annotation is used to mark the main class of the Spring Boot application. I
 
   - `Spring Boot Actuator` is a Spring Boot `module` that provides functionality for monitoring and managing Spring Boot applications. It provides ready-to-use RESTful endpoints that can be used to monitor different aspects of the running application, as well as interact with it to obtain information about its status, health, metrics, etc.
 
+![WorkingoftheSpringsActuator](https://github.com/douaeelh2/Spring-Boot-Documentation/assets/127549220/35838162-d993-461c-807a-bd23873633d0)
+
 
 | Feature           | Endpoint               | Description                                                                                   |
 |-------------------|------------------------|-----------------------------------------------------------------------------------------------|
