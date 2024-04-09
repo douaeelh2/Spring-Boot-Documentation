@@ -818,20 +818,37 @@ This annotation indicates that the return value of the method should be serializ
 - The `@ResponseBody` annotation tells a controller that the object returned is automatically serialized into JSON and passed back into the HttpResponse object.
 
   ```java
-       @RestController
-      @RequestMapping("/api/products")
-      public class ProductController {
+       import org.springframework.stereotype.Controller;
+      import org.springframework.web.bind.annotation.*;
+      
+      @Controller
+      @RequestMapping("/books")
+      public class BookController {
       
           @GetMapping("/{id}")
           @ResponseBody
-          public Product getProductById(@PathVariable("id") Long id) {
-              // Logic to fetch a product by its ID
-              return productService.getProductById(id);
+          public Book getBookById(@PathVariable Long id) {
+              // Assume we retrieve the book from a database
+              Book book = new Book();
+              book.setId(id);
+              book.setTitle("Spring in Action");
+              book.setAuthor("Craig Walls");
+      
+              return book;
+          }
+      
+          @PostMapping("/")
+          @ResponseBody
+          public String createBook(@RequestBody Book book) {
+              // Assume we save the book to a database
+              return "Book created successfully: " + book.getTitle();
           }
       }
 
    ```
-- In this example, the `getProductById` method returns a `Product object`. However, instead of interpreting it as the name of a view, the `@ResponseBody` annotation instructs Spring to serialize this object directly into the HTTP response body as `JSON` or `XML`, depending on the `content type` negotiation. 
+- `getBookById()` method retrieves a book by its ID from a database (in this case, it just creates a dummy book object for demonstration purposes) and returns it. With `@ResponseBody`, Spring will serialize the Book `object` to `JSON (or XML if configured)` and write it to the response body.
+
+- `createBook()` method accepts a `JSON (or XML)` representation of a Book `object` in the request body using the `@RequestBody` annotation. It then processes this request (in this case, just printing a success message) and returns a response.
 
   ```java
        @ResponseBody
@@ -842,10 +859,35 @@ This annotation indicates that the return value of the method should be serializ
   
   ```
 
+### 8. @RestController:  
+- is a specific annotation in Spring MVC that combines the functionality of @Controller and @ResponseBody. It's used to annotate controller classes that handle HTTP requests in RESTful applications. In other words, `@RestController` is essentially a simplified version of @Controller intended to be used in the context of building RESTful APIs.
+- When a class is annotated with `@RestController`, each method in that class is automatically annotated with `@ResponseBody`. This means that each method in the controller class directly returns the result as an HTTP response, without going through view resolution.
 
+   ```java
+        import org.springframework.web.bind.annotation.*;
+   
+        @RestController
+        @RequestMapping("/api/products")
+        public class ProductController {
+        
+            @GetMapping("/{id}")
+            public Product getProductById(@PathVariable("id") Long id) {
+                // Logic to fetch a product by its ID
+                return productService.getProductById(id);
+            }
+        
+            @PostMapping("/create")
+            public String createProduct(@RequestBody Product product) {
+                // Logic to create a new product
+                productService.createProduct(product);
+                return "Product created successfully";
+            }
+        }
+
+   ```
 
   
-### 7. @RequestBody:  
+### 9. @RequestBody:  
 is used to map the body of an HTTP request to a Java object in a controller method.
 This annotation is used when the HTTP request data is sent as JSON, XML, or another format and needs to be deserialized into a Java object.
 
@@ -856,7 +898,6 @@ This annotation is used when the HTTP request data is sent as JSON, XML, or anot
         
             @PostMapping("/create")
             public String createProduct(@RequestBody Product product) {
-                // Logic to create a new product
                 productService.createProduct(product);
                 return "Product created successfully";
             }
