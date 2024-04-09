@@ -994,3 +994,41 @@ is an annotation used in Spring Framework for handling exceptions in Spring MVC 
   - `HttpStatus.NOT_FOUND:` Indicates that the requested resource could not be found `(HTTP status code 404)`.
   - Additionally, an exception handler method (handleProductNotFoundException) is annotated with @ExceptionHandler and `@ResponseStatus(HttpStatus.NOT_FOUND)` to handle ProductNotFoundException. This method returns a custom message with HTTP status code `404` (Not Found) when the exception occurs.
 
+### 10. @ModelAttribute
+is an annotation in Spring MVC framework used to bind a method parameter or method return value to a named model attribute and expose it to the view layer. It's commonly used in Spring MVC controllers to prepare data before rendering a view.
+
+Let's say you have a Spring MVC application where you want to display information about a user. You have a User class with attributes such as name, email, and age. Now, you want to populate this user object and pass it to your view for rendering.
+
+  ```java
+      import org.springframework.stereotype.Controller;
+      import org.springframework.web.bind.annotation.ModelAttribute;
+      import org.springframework.web.bind.annotation.RequestMapping;
+      import org.springframework.web.servlet.ModelAndView;
+      
+      @Controller
+      public class UserController {
+      
+          @RequestMapping("/user")
+          public ModelAndView getUser() {
+              // Assume user details are fetched from a database or some service
+              User user = userService.getUserDetails();
+              return new ModelAndView("userView", "user", user);
+          }
+      
+          @ModelAttribute("user")
+          public User populateUser() {
+              // This method will be called before any handler method in this controller
+              // It prepares the user object and adds it to the model
+              User user = new User();
+              user.setName("John Doe");
+              user.setEmail("john@example.com");
+              user.setAge(30);
+              return user;
+          }
+      }
+
+   ```
+
+- `@ModelAttribute("user")` annotation on the `populateUser()` method ensures that the returned User object is added to the model with the name "user".
+- When the `getUser()` method is invoked, it retrieves the user details (from a database or some service) and adds it to the ModelAndView with the name "userView".
+- The view (e.g., userView.jsp or userView.html) can access the user object using the name "user" and render its attributes like name, email, and age.
