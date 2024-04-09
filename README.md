@@ -908,15 +908,88 @@ This annotation is used when the HTTP request data is sent as JSON, XML, or anot
 
 
 ### 9. @ExceptionHandler
- annotation for handling exceptions in specific handler classes and/or handler methods.
-Handler methods which are annotated with this annotation are allowed to have very flexible signatures.
-Spring calls this method when a request handler method throws any of the specified exceptions. The caught exception can be passed to the method as an argument:
+is an annotation used in Spring Framework for handling exceptions in Spring MVC controllers. When an exception is thrown during the processing of a request, Spring MVC looks for methods annotated with @ExceptionHandler within the same controller or any global exception handler defined in the application context.
 
-```java
-    @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<?> resourceNotFoundException(ResourceNotFoundException ex, WebRequest request) {
-      ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(), request.getDescription(false));
-      return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
-}
+  ```java
+     import org.springframework.web.bind.annotation.*;
+  
+        @RestController
+        @RequestMapping("/api/products")
+        public class ProductController {
+        
+            @GetMapping("/{id}")
+            public Product getProductById(@PathVariable("id") Long id) {
+                // Logic to fetch a product by its ID
+                Product product = productService.getProductById(id);
+                if (product == null) {
+                    throw new ProductNotFoundException("Product with id " + id + " not found");
+                }
+                return product;
+            }
+        
+            @ExceptionHandler(ProductNotFoundException.class)
+            @ResponseStatus(HttpStatus.NOT_FOUND)
+            public String handleProductNotFoundException(ProductNotFoundException ex) {
+                return ex.getMessage();
+            }
+        }
+   ```
 
- ```
+
+### 9. @ResponseStatus 
+- This annotation in Spring MVC is used to specify the HTTP `status` code that should be returned by a controller method when it completes its execution. It allows you to customize the HTTP status code of the response without explicitly returning a `ResponseEntity` object.
+
+    ```java
+       import org.springframework.web.bind.annotation.*;
+       import org.springframework.http.*;
+      
+      @RestController
+      @RequestMapping("/api/products")
+      public class ProductController {
+      
+          @GetMapping("/{id}")
+          @ResponseStatus(HttpStatus.OK)
+          public Product getProductById(@PathVariable("id") Long id) {
+              // Logic to fetch a product by its ID
+              return productService.getProductById(id);
+          }
+      
+          @PostMapping("/create")
+          @ResponseStatus(HttpStatus.CREATED)
+          public String createProduct(@RequestBody Product product) {
+              // Logic to create a new product
+              productService.createProduct(product);
+              return "Product created successfully";
+          }
+      
+          @DeleteMapping("/{id}")
+          @ResponseStatus(HttpStatus.NO_CONTENT)
+          public void deleteProduct(@PathVariable("id") Long id) {
+              // Logic to delete a product by its ID
+              productService.deleteProduct(id);
+          }
+      
+          @PutMapping("/{id}")
+          @ResponseStatus(HttpStatus.ACCEPTED)
+          public String updateProduct(@PathVariable("id") Long id, @RequestBody Product product) {
+              // Logic to update a product by its ID
+              productService.updateProduct(id, product);
+              return "Product updated successfully";
+          }
+      
+          @ExceptionHandler(ProductNotFoundException.class)
+          @ResponseStatus(HttpStatus.NOT_FOUND)
+          public String handleProductNotFoundException(ProductNotFoundException ex) {
+              return ex.getMessage();
+          }
+      }
+
+   ```
+
+  - `HttpStatus.OK:` Indicates that the request has succeeded `(HTTP status code 200)`.
+  - `HttpStatus.CREATED:` Indicates that the request has been fulfilled and a new resource has been created `(HTTP status code 201)`.
+  - `HttpStatus.NO_CONTENT:` Indicates that the request has been successfully processed, but there is no content to return `(HTTP status code 204)`.
+  - `HttpStatus.ACCEPTED:` Indicates that the request has been accepted for processing, but the processing has not been completed yet `(HTTP status code 202)`.
+  - `HttpStatus.NOT_FOUND:` Indicates that the requested resource could not be found `(HTTP status code 404)`.
+  - Additionally, an exception handler method (handleProductNotFoundException) is annotated with @ExceptionHandler and `@ResponseStatus(HttpStatus.NOT_FOUND)` to handle ProductNotFoundException. This method returns a custom message with HTTP status code `404` (Not Found) when the exception occurs.
+
