@@ -469,34 +469,41 @@ This annotation is used to mark the main class of the Spring Boot application. I
 # Get Started With Spring Boot
   # Spring Boot Project Structure
 
-  ```
-   project
+  ```md
+   my-spring-boot-project
+      │
       ├── src
       │   ├── main
       │   │   ├── java
       │   │   │   └── com
       │   │   │       └── example
       │   │   │           └── myproject
-      │   │   │               ├── controller
-      │   │   │               ├── service
-      │   │   │               ├── repository
-      │   │   │               ├── model
-      │   │   │               └── Application.java
-      │   │   └── resources
-      │   │       ├── static
-      │   │       ├── templates
-      │   │       ├── application.properties
-      │   │       └── log4j2.xml
+      │   │   │               ├── controller      # Controllers (handling HTTP requests)
+      │   │   │               ├── model           # POJOs (Plain Old Java Objects)
+      │   │   │               ├── repository      # Data access layer (for interacting with the database)
+      │   │   │               ├── service         # Business logic layer
+      │   │   │               └── MyProjectApplication.java # Main class, starting point of the application
+      │   │   │
+      │   │   ├── resources
+      │   │   │   ├── static       # Static resources (HTML, CSS, JavaScript)
+      │   │   │   ├── templates    # Templates (Thymeleaf, FreeMarker, etc.)
+      │   │   │   └── application.properties  # Configuration properties
+      │   │   │
+      │   │   └── webapp
+      │   │       └── WEB-INF      # Web application configuration
+      │   │
       │   └── test
-      │       ├── java
-      │       │   └── com
-      │       │       └── example
-      │       │           └── myproject
-      │       │               └── service
-      │       └── resources
-      │           └── application-test.properties
-      ├── target
-      ├── pom.xml
-      ├── .gitignore
-      └── README.md
+      │       └── java
+      │           └── com
+      │               └── example
+      │                   └── myproject
+      │                       ├── controller      # Test classes for controllers
+      │                       ├── service         # Test classes for services
+      │                       └── MyProjectApplicationTests.java  # Integration tests
+      │
+      ├── mvnw            # Maven wrapper script for Unix-based systems
+      ├── mvnw.cmd        # Maven wrapper script for Windows systems
+      ├── pom.xml         # Maven Project Object Model file
+      └── README.md       # Project documentation
+
   ```
