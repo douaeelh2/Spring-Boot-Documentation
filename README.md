@@ -20,19 +20,23 @@ This documentation serves as a comprehensive guide to understanding and using Sp
       - [Spring Boot Actuator](#spring-boot-actuator)
       - [Spring Boot CLI](#spring-boot-cli)
       - [Spring Boot Profiles](#spring-boot-profiles)
+        
+ 3. [Get Started With Spring Boot](#get-started-with-spring-boot)
+      - [Spring Boot Project Structure](#spring-boot-project-structure)
+      - [Spring Boot First Application](#spring-boot-first-application)
    
-  3. [Spring Data JPA and Hibernate](#spring-data-JPA-and-hibernate)
+ 4. [Web Development with Spring Boot](#web-development-with-spring-boot)
+      - [MVC with Spring Boot](#mvc-with-spring-boot)
+      - [Thymeleaf Templates](#thymeleaf-templates)
+      - [Building RESTful APIs](#building-restful-apis)
+      - [WebSockets](#websockets)
+   
+ 5. [Spring Data JPA and Hibernate](#spring-data-JPA-and-hibernate)
       - [Spring Data Annotations](#spring-data-annotations)
       - [Spring Data JPA](#spring-data-jpa)
       - [Spring Data JDBC](#spring-data-jdbc)
       - [Using QueryDSL](#using-querydsl)
       - [Transaction Management](#transaction-management)
-   
- 5. [Web Development with Spring Boot](#web-development-with-spring-boot)
-      - [MVC with Spring Boot](#mvc-with-spring-boot)
-      - [Thymeleaf Templates](#thymeleaf-templates)
-      - [Building RESTful APIs](#building-restful-apis)
-      - [WebSockets](#websockets)
         
  6. [Security](#security)
       - [Authentication and Authorization](#authentication-and-authorization)
@@ -462,37 +466,37 @@ This annotation is used to mark the main class of the Spring Boot application. I
 
 
 
-# Web Development with Spring Boot
+# Get Started With Spring Boot
   # Spring Boot Project Structure
 
-```
-    project
-  ├── src
-  │   ├── main
-  │   │   ├── java
-  │   │   │   └── com
-  │   │   │       └── example
-  │   │   │           └── myproject
-  │   │   │               ├── controller
-  │   │   │               ├── service
-  │   │   │               ├── repository
-  │   │   │               ├── model
-  │   │   │               └── Application.java
-  │   │   └── resources
-  │   │       ├── static
-  │   │       ├── templates
-  │   │       ├── application.properties
-  │   │       └── log4j2.xml
-  │   └── test
-  │       ├── java
-  │       │   └── com
-  │       │       └── example
-  │       │           └── myproject
-  │       │               └── service
-  │       └── resources
-  │           └── application-test.properties
-  ├── target
-  ├── pom.xml
-  ├── .gitignore
-  └── README.md
-```
+  ```
+   project
+      ├── src
+      │   ├── main
+      │   │   ├── java
+      │   │   │   └── com
+      │   │   │       └── example
+      │   │   │           └── myproject
+      │   │   │               ├── controller
+      │   │   │               ├── service
+      │   │   │               ├── repository
+      │   │   │               ├── model
+      │   │   │               └── Application.java
+      │   │   └── resources
+      │   │       ├── static
+      │   │       ├── templates
+      │   │       ├── application.properties
+      │   │       └── log4j2.xml
+      │   └── test
+      │       ├── java
+      │       │   └── com
+      │       │       └── example
+      │       │           └── myproject
+      │       │               └── service
+      │       └── resources
+      │           └── application-test.properties
+      ├── target
+      ├── pom.xml
+      ├── .gitignore
+      └── README.md
+  ```
