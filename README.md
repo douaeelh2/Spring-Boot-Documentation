@@ -463,35 +463,36 @@ This annotation is used to mark the main class of the Spring Boot application. I
 
 
 # Web Development with Spring Boot
-  # Spring Boot Project Tree
+  # Spring Boot Project Structure
 
-  project
-├── src
-│   ├── main
-│   │   ├── java
-│   │   │   └── com
-│   │   │       └── example
-│   │   │           └── myproject
-│   │   │               ├── controller
-│   │   │               ├── service
-│   │   │               ├── repository
-│   │   │               ├── model
-│   │   │               └── Application.java
-│   │   └── resources
-│   │       ├── static
-│   │       ├── templates
-│   │       ├── application.properties
-│   │       └── log4j2.xml
-│   └── test
-│       ├── java
-│       │   └── com
-│       │       └── example
-│       │           └── myproject
-│       │               └── service
-│       └── resources
-│           └── application-test.properties
-├── target
-├── pom.xml
-├── .gitignore
-└── README.md
-
+```
+    project
+  ├── src
+  │   ├── main
+  │   │   ├── java
+  │   │   │   └── com
+  │   │   │       └── example
+  │   │   │           └── myproject
+  │   │   │               ├── controller
+  │   │   │               ├── service
+  │   │   │               ├── repository
+  │   │   │               ├── model
+  │   │   │               └── Application.java
+  │   │   └── resources
+  │   │       ├── static
+  │   │       ├── templates
+  │   │       ├── application.properties
+  │   │       └── log4j2.xml
+  │   └── test
+  │       ├── java
+  │       │   └── com
+  │       │       └── example
+  │       │           └── myproject
+  │       │               └── service
+  │       └── resources
+  │           └── application-test.properties
+  ├── target
+  ├── pom.xml
+  ├── .gitignore
+  └── README.md
+```
