@@ -27,7 +27,7 @@ This documentation serves as a comprehensive guide to understanding and using Sp
    
  4. [Web Development with Spring Boot](#web-development-with-spring-boot)
       - [Introduction to RESTful Web Services](#introduction-to-RESTful-web-services)
-      - [MVC with Spring Boot](#mvc-with-spring-boot)
+      - [Spring MVC Web Annotations](#spring-MVC-web-annotations)
       - [Thymeleaf Templates](#thymeleaf-templates)
       - [Building RESTful APIs](#building-restful-apis)
       - [WebSockets](#websockets)
@@ -665,7 +665,8 @@ The status codes defined in HTTP are the following:
    Spring MVC provides annotations to simplify the configuration and implementation of web controllers. These annotations are used to define request mappings, handle request parameters, specify response types, and more. Here are some commonly used Spring MVC web annotations along with examples:
 
 ### 1. @Controller: 
-annotation is used in Spring MVC to mark a class as a controller component. It acts as a request handler and handles incoming HTTP requests, performing the necessary processing and returning a response.
+- This annotation is simply a specialization of the `@Component` class and allows implementation classes to be autodetected through the classpath scanning.
+- It is used in Spring MVC to mark a class as a controller component. It acts as a request handler and handles incoming HTTP requests, performing the necessary processing and returning a response.
 
 Controllers in Spring MVC are responsible for processing user requests, interacting with business logic or services, and returning a view or response to the client.
 
