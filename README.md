@@ -323,7 +323,7 @@ Overall, the architecture of Spring Boot is designed to simplify and streamline 
 
 
 
-# Core Concepts 
+# 2. Core Concepts 
   # Spring Boot Starters
   
 Before Spring Boot was introduced, Spring Developers used to spend a lot of time on Dependency management. `Spring Boot` Starters were introduced to solve this problem so that the developers can spend more time on actual code than Dependencies. Spring Boot Starters are dependency descriptors that can be added under the `<dependencies>` section in `pom.xml`. There are around 50+ Spring Boot Starters for different Spring and related technologies. These starters give all the dependencies under a single name.
@@ -466,7 +466,7 @@ This annotation is used to mark the main class of the Spring Boot application. I
 
 
 
-# Get Started With Spring Boot
+# 3. Get Started With Spring Boot
   # Spring Boot Project Structure
 
   ```
