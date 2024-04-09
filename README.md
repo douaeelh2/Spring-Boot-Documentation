@@ -469,7 +469,7 @@ This annotation is used to mark the main class of the Spring Boot application. I
 # Get Started With Spring Boot
   # Spring Boot Project Structure
 
-  ```md
+  ```java
    my-spring-boot-project
       │
       ├── src
