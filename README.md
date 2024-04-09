@@ -859,7 +859,7 @@ This annotation indicates that the return value of the method should be serializ
   
   ```
 
-### 8. @RestController:  
+### 7. @RestController:  
 - is a specific annotation in Spring MVC that combines the functionality of @Controller and @ResponseBody. It's used to annotate controller classes that handle HTTP requests in RESTful applications. In other words, `@RestController` is essentially a simplified version of @Controller intended to be used in the context of building RESTful APIs.
 - When a class is annotated with `@RestController`, each method in that class is automatically annotated with `@ResponseBody`. This means that each method in the controller class directly returns the result as an HTTP response, without going through view resolution.
 
@@ -887,7 +887,7 @@ This annotation indicates that the return value of the method should be serializ
    ```
 
   
-### 9. @RequestBody:  
+### 8. @RequestBody:  
 is used to map the body of an HTTP request to a Java object in a controller method.
 This annotation is used when the HTTP request data is sent as JSON, XML, or another format and needs to be deserialized into a Java object.
 
@@ -907,7 +907,7 @@ This annotation is used when the HTTP request data is sent as JSON, XML, or anot
 - In this example, the `createProduct` method takes a `Product object` as a parameter, annotated with `@RequestBody`. When an HTTP POST request is sent to the "/api/products/create" endpoint with the product details in the request body `(in JSON, for example)`, Spring automatically `deserializes` the JSON into a `Product object` and passes it to the createProduct method.
 
 
-### 8. @ExceptionHandler
+### 9. @ExceptionHandler
  annotation for handling exceptions in specific handler classes and/or handler methods.
 Handler methods which are annotated with this annotation are allowed to have very flexible signatures.
 Spring calls this method when a request handler method throws any of the specified exceptions. The caught exception can be passed to the method as an argument:
