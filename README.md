@@ -23,7 +23,7 @@ This documentation serves as a comprehensive guide to understanding and using Sp
         
  3. [Get Started With Spring Boot](#get-started-with-spring-boot)
       - [Spring Boot Project Structure](#spring-boot-project-structure)
-      - [Spring Boot First Application](#spring-boot-first-application)
+      - [Creating the First Spring Boot Project](#creating-the-first-spring-boot-project)
    
  4. [Web Development with Spring Boot](#web-development-with-spring-boot)
       - [MVC with Spring Boot](#mvc-with-spring-boot)
@@ -538,4 +538,7 @@ This annotation is used to mark the main class of the Spring Boot application. I
 - `pom.xml:` This is the Project Object Model (POM) file for your Maven project. It contains project configuration and dependencies. Maven uses this file to build the project, manage dependencies, and perform various other tasks.
 
 - `README.md:` This is typically a Markdown file containing project documentation, instructions for developers, setup guides, etc. It helps onboard new developers to the project and provides important information about the project's structure and usage.
-  
+
+
+# Creating the First Spring Boot Project
+
