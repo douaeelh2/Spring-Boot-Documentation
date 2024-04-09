@@ -507,3 +507,30 @@ This annotation is used to mark the main class of the Spring Boot application. I
       └── README.md       # Project documentation
 
   ```
+
+- `src/main/java:` This folder contains the main Java source code for your application. It typically follows the package structure of your project. Here's the role of each subfolder:
+
+    - `com/example/myproject/controller:` This is where you'll place your controller classes. Controllers handle incoming HTTP requests, process them, and return appropriate responses.
+    
+    - `com/example/myproject/model:` This folder contains your POJOs (Plain Old Java Objects). These are typically your domain objects or data transfer objects (DTOs) that represent the data structure of your application.
+    
+    - `com/example/myproject/repository:` This folder holds your data access layer classes. These classes interact with the database or any other data source to perform CRUD (Create, Read, Update, Delete) operations.
+    
+    - `com/example/myproject/service:` This folder contains your service layer classes. Service classes contain the business logic of your application. They orchestrate interactions between controllers and repositories and implement the application's use cases.
+    
+    - `com/example/myproject/MyProjectApplication.java:` This is the main class of your Spring Boot application. It contains the main method and is responsible for bootstrapping and starting your application.
+
+- `src/main/resources:` This folder contains non-Java resources used by your application. Here's the role of each subfolder:
+  
+    - `static:` This folder holds static resources such as HTML, CSS, JavaScript files, images, etc.
+    
+    - `templates:` This folder is used to store template files if you are using a templating engine like Thymeleaf or FreeMarker.
+    
+    - `application.properties:` This is the main configuration file for your Spring Boot application. You can configure various properties related to your application here, such as database configuration, server port, logging configuration, etc.
+    
+ 
+- `src/main/webapp/WEB-INF:` This folder is used for web application configuration in traditional Servlet-based web applications. In most Spring Boot applications, you may not use this folder directly, as Spring Boot handles web application configuration internally.
+
+- `src/test/java:` This folder contains test source code for your application. It mirrors the structure of the src/main/java folder and includes tests for controllers, services, and other components of your application.
+
+  
