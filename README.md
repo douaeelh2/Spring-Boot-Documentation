@@ -664,7 +664,8 @@ The status codes defined in HTTP are the following:
 
    Spring MVC provides annotations to simplify the configuration and implementation of web controllers. These annotations are used to define request mappings, handle request parameters, specify response types, and more. Here are some commonly used Spring MVC web annotations along with examples:
 
-- `@Controller:` annotation is used in Spring MVC to mark a class as a controller component. It acts as a request handler and handles incoming HTTP requests, performing the necessary processing and returning a response.
+### 1.`@Controller:` 
+annotation is used in Spring MVC to mark a class as a controller component. It acts as a request handler and handles incoming HTTP requests, performing the necessary processing and returning a response.
 
 Controllers in Spring MVC are responsible for processing user requests, interacting with business logic or services, and returning a view or response to the client.
 
@@ -685,7 +686,8 @@ Controllers in Spring MVC are responsible for processing user requests, interact
 
 
 
-- `@RequestMapping:` This annotation is used to map web requests to specific handler methods. It can be applied at the class level and/or method level. You can specify request paths, HTTP methods, request parameters, headers, etc.
+### 3. `@RequestMapping:`
+This annotation is used to map web requests to specific handler methods. It can be applied at the class level and/or method level. You can specify request paths, HTTP methods, request parameters, headers, etc.
 
     - `Class level:`  When you use the `@RequestMapping` annotation at the class level of a controller, it means that all methods within that controller will be mapped to the base URL specified in the class-level annotation. This essentially sets a prefix for all URLs defined in the methods of the controller.
     - `URL Mapping:` You specify the URL that the method will respond to. For example, if you put `@RequestMapping("/products")` above a method, that method will respond to all requests with the URL "/products".
@@ -767,7 +769,8 @@ Controllers in Spring MVC are responsible for processing user requests, interact
 
 
 
-- `@GetMapping`, `@PostMapping`, `@PutMapping`, `@DeleteMapping`: These annotations are shortcuts for @RequestMapping with specific HTTP methods (GET, POST, PUT, DELETE).
+### 4. `@GetMapping`, `@PostMapping`, `@PutMapping`, `@DeleteMapping`: 
+These annotations are shortcuts for @RequestMapping with specific HTTP methods (GET, POST, PUT, DELETE).
 
 ```java
   import org.springframework.web.bind.annotation.GetMapping;
@@ -792,7 +795,8 @@ Controllers in Spring MVC are responsible for processing user requests, interact
 
 
 
- - `@RequestParam:` This annotation binds request parameters to method parameters.
+ ### 5. `@RequestParam:` 
+ This annotation binds request parameters to method parameters.
  - Used to extract request parameters from the URL.
  - Parameters are typically in the form `?param=value` in the URL.
  - These parameters are `optional` by default unless you specify required=true.
@@ -807,7 +811,7 @@ Controllers in Spring MVC are responsible for processing user requests, interact
 
 
 
-- `@ResponseBody:` This annotation indicates that the return value of the method should be serialized directly to the HTTP response body.
+### 6. `@ResponseBody:` This annotation indicates that the return value of the method should be serialized directly to the HTTP response body.
 - When you use the `@ResponseBody` annotation on a method, Spring converts the return value and writes it to the HTTP response automatically. Each method in the Controller class must be annotated with `@ResponseBody`.
   
 - The `@ResponseBody` annotation tells a controller that the object returned is automatically serialized into JSON and passed back into the HttpResponse object.
@@ -840,7 +844,7 @@ Controllers in Spring MVC are responsible for processing user requests, interact
 
 
   
-- `@RequestBody:`  is used to map the body of an HTTP request to a Java object in a controller method.
+### 7. `@RequestBody:`  is used to map the body of an HTTP request to a Java object in a controller method.
 This annotation is used when the HTTP request data is sent as JSON, XML, or another format and needs to be deserialized into a Java object.
 
    ```java
@@ -856,13 +860,12 @@ This annotation is used when the HTTP request data is sent as JSON, XML, or anot
             }
         }
 
-    ```
+   ```
 - In this example, the `createProduct` method takes a `Product object` as a parameter, annotated with `@RequestBody`. When an HTTP POST request is sent to the "/api/products/create" endpoint with the product details in the request body `(in JSON, for example)`, Spring automatically `deserializes` the JSON into a `Product object` and passes it to the createProduct method.
 
 
-
-   
-- `@ExceptionHandler` annotation for handling exceptions in specific handler classes and/or handler methods.
+### 8. `@ExceptionHandler`
+ annotation for handling exceptions in specific handler classes and/or handler methods.
 Handler methods which are annotated with this annotation are allowed to have very flexible signatures.
 Spring calls this method when a request handler method throws any of the specified exceptions. The caught exception can be passed to the method as an argument:
 
