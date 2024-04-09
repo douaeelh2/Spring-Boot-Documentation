@@ -542,3 +542,77 @@ This annotation is used to mark the main class of the Spring Boot application. I
 
 # Creating the First Spring Boot Project
 
+### 1. Access Spring Initializer: 
+Go to Spring Initializer in your web browser.The best thing about Spring initializer is user friendly GUI
+
+![spring-initializer](https://github.com/douaeelh2/Spring-Boot-Documentation/assets/127549220/c6d47ed9-3b24-4971-a264-e0bc89240424)
+
+### 1. Let’s Configure Your Project:
+- Choose the build tool (Maven or Gradle).
+- Select the programming language (Java is recommended).
+- Set the project metadata (group, artifact, name, description, package).
+- Select packaging (JAR is commonly used).
+- Choose your Java version.
+
+### 2. Add Dependencies:
+
+- Add essential dependencies like Spring Web.
+- Rest is up to you. Select the one that suits your need.
+
+### 3. Generate and Download: 
+- Click “Generate” to create the project structure and download it as a ZIP file.
+
+### 4. Import Project: 
+- Extract the ZIP file, open your IDE, and import the project as a Maven or Gradle project.
+
+### 5. Go to Main Class : 
+- The main class will look like below
+
+```java
+
+  import org.springframework.boot.SpringApplication;
+  import org.springframework.boot.autoconfigure.SpringBootApplication;
+  
+  @SpringBootApplication
+  public class MySpringBootApplication {
+  
+      public static void main(String[] args) {
+          SpringApplication.run(MySpringBootApplication.class, args);
+      }
+  }
+```
+
+- `@SpringBootApplication` annotation tells Spring Boot that this is the entry point for your application.
+
+### 6. Write Your First Controller: 
+- Create a simple controller class that handles HTTP requests. Use annotations like @RestController and @RequestMapping to define your endpoints and methods.Your main class will look like this now.
+
+```java
+
+  import org.springframework.boot.SpringApplication;
+  import org.springframework.boot.autoconfigure.SpringBootApplication;
+  import org.springframework.web.bind.annotation.GetMapping;
+  import org.springframework.web.bind.annotation.RestController;
+  
+  @SpringBootApplication
+  @RestController
+  public class MySpringBootApplication {
+  
+      public static void main(String[] args) {
+          SpringApplication.run(MySpringBootApplication.class, args);
+      }
+      @GetMapping("/hello")
+      public String sayHello() {
+          return "Hello, Spring Boot!";
+      }
+  }
+
+```
+
+### 7.Run Your Application: 
+- Run the main class (typically named Application) in your IDE or use terminal commands (./mvnw spring-boot:run for Maven, ./gradlew bootRun for Gradle).In STS right-click on your project select run as spring boot app.
+
+### 8. Access Your App: 
+- Open a web browser and go to http://localhost:8080/hello to see your Spring Boot application in action and you will get “Hello, Spring Boot!”.
+
+  ![SpringBootFirstApp](https://github.com/douaeelh2/Spring-Boot-Documentation/assets/127549220/aec0ff59-7642-4b31-8f5c-dfb2bb43e1e9)
