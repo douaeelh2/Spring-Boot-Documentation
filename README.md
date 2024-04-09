@@ -26,60 +26,61 @@ This documentation serves as a comprehensive guide to understanding and using Sp
       - [Creating the First Spring Boot Project](#creating-the-first-spring-boot-project)
    
  4. [Web Development with Spring Boot](#web-development-with-spring-boot)
+      - [Introduction to RESTful Web Services](#introduction-to-RESTful-web-services)
       - [MVC with Spring Boot](#mvc-with-spring-boot)
       - [Thymeleaf Templates](#thymeleaf-templates)
       - [Building RESTful APIs](#building-restful-apis)
       - [WebSockets](#websockets)
    
- 5. [Spring Data JPA and Hibernate](#spring-data-JPA-and-hibernate)
+ 6. [Spring Data JPA and Hibernate](#spring-data-JPA-and-hibernate)
       - [Spring Data Annotations](#spring-data-annotations)
       - [Spring Data JPA](#spring-data-jpa)
       - [Spring Data JDBC](#spring-data-jdbc)
       - [Using QueryDSL](#using-querydsl)
       - [Transaction Management](#transaction-management)
         
- 6. [Security](#security)
+ 7. [Security](#security)
       - [Authentication and Authorization](#authentication-and-authorization)
       - [Securing REST APIs](#securing-rest-apis)
       - [OAuth2 with Spring Boot](#oauth2-with-spring-boot)
       
- 7. [Testing](#testing)
+ 8. [Testing](#testing)
       - [Unit Testing with JUnit and Mockito](#unit-testing-with-junit-and-mockito)
       - [Integration Testing](#integration-testing)
       - [Testing Web Applications](#testing-web-applications)
    
- 8. [Advanced Topics](#advanced-topics)
+ 9. [Advanced Topics](#advanced-topics)
       - [Spring Boot DevTools](#spring-boot-devtools)
       - [Actuator Endpoints](#actuator-endpoints)
       - [Spring Boot Testing Utilities](#spring-boot-testing-utilities)
       - [Deployment Strategies](#deployment-strategies)
       - [Monitoring and Metrics](#monitoring-and-metrics)
    
- 9. [Integrations](#integrations)
+ 10. [Integrations](#integrations)
       - [Database Integration](#database-integration)
       - [Messaging with Spring Boot](#messaging-with-spring-boot)
       - [Integrating with External APIs](#integrating-with-external-apis)
       - [Caching](#caching)
       
- 10. [Cloud Deployment](#cloud-deployment)
+ 11. [Cloud Deployment](#cloud-deployment)
       - [Deploying to Cloud Platforms (AWS, Azure, Google Cloud)](#deploying-to-cloud-platforms-aws-azure-google-cloud)
       - [Containerization with Docker](#containerization-with-docker)
       - [Kubernetes Integration](#kubernetes-integration)
       - [Serverless Deployment](#serverless-deployment)
    
- 11. [Best Practices and Tips](#best-practices-and-tips)
+ 12. [Best Practices and Tips](#best-practices-and-tips)
       - [Code Organization](#code-organization)
       - [Performance Optimization](#performance-optimization)
       - [Handling Large-Scale Applications](#handling-large-scale-applications)
       - [Troubleshooting](#troubleshooting)
    
- 12. [Case Studies and Examples](#case-studies-and-examples)
+ 13. [Case Studies and Examples](#case-studies-and-examples)
       - [Building a Blog Application](#building-a-blog-application)
       - [E-commerce Platform with Spring Boot](#e-commerce-platform-with-spring-boot)
       - [Real-time Chat Application](#real-time-chat-application)
       - [Microservices Architecture](#microservices-architecture)
       
- 13. [Resources and Further Learning](#resources-and-further-learning)
+ 14. [Resources and Further Learning](#resources-and-further-learning)
       - [Official Spring Boot Documentation](#official-spring-boot-documentation)
       - [Online Tutorials and Courses](#online-tutorials-and-courses)
       - [Community Forums and Support](#community-forums-and-support)
@@ -616,3 +617,149 @@ Go to Spring Initializer in your web browser.The best thing about Spring initial
 - Open a web browser and go to http://localhost:8080/hello to see your Spring Boot application in action and you will get “Hello, Spring Boot!”.
 
   ![SpringBootFirstApp](https://github.com/douaeelh2/Spring-Boot-Documentation/assets/127549220/aec0ff59-7642-4b31-8f5c-dfb2bb43e1e9)
+
+
+
+# 4. Web Development with Spring Boot
+
+  # Introduction to RESful Web Services
+
+  - RESTful Web Services REST stands for REpresentational State Transfer. It was developed by Roy Thomas Fielding, one of the principal authors of the web protocol HTTP. Consequently, REST was an architectural approach designed to make the optimum use of HTTP protocol. It uses the concepts and verbs already present in HTTP to develop web services. This made REST incredibly easy to use and consume, so much so that it is the go-to standard for building web services today.
+
+- A resource can be anything, it can be accessed through a URI (Uniform Resource Identifier). Unlike SOAP, REST does not have a standard messaging format. We can build REST web services using many representations, including both XML and JSON, although JSON is the more popular option. An important thing to consider is that REST is not a standard but a style whose purpose is to constrain our architecture to a client-server architecture and is designed to use stateless communication protocols like HTTP.
+
+### Important Methods of HTTP
+The main methods of HTTP we build web services for are:
+
+GET: Reads an existing data.
+PUT: Updates existing data.
+POST: Creates new data.
+DELETE: Deletes the data.
+
+### 1. GET
+The default request method for HTTP. We don’t have any request body with this method, but we can define multiple request parameters or path variables in the URL. This method is used for getting obtaining some resources. Depending on the presence of an ID parameter, either we can fetch a specific resource or fetch a collection of resources in the absence of the parameter. 
+
+### 2. POST
+The POST method of HTTP is used to create a resource. We have a request body in this method and can also define multiple request parameters or path variables in the URL.
+
+### 3. PUT
+The PUT method of HTTP is used to update an existing resource. We have a request body in this method and can also define multiple request parameters or path variables in the URL.
+
+### 4. DELETE
+The DELETE method of HTTP is used to remove a resource. We don’t have a request body in this method but can define multiple request parameters or path variables in the URL. We can delete multiple or single records, usually based on whether we have an ID parameter or not. We can delete multiple or single records, usually based on whether we have an ID parameter or not.
+
+REST web services use the Status-Line part of an HTTP response message to inform clients of their request’s ultimate result.
+
+### HTTP Standard Status Codes
+The status codes defined in HTTP are the following:
+
+- `200`: Success
+- `201`: Created
+- `401`: Unauthorized
+- `404`: Resource Not Found
+- `500`: Server Error
+
+
+  # Spring MVC Web Annotations
+
+   Spring MVC provides annotations to simplify the configuration and implementation of web controllers. These annotations are used to define request mappings, handle request parameters, specify response types, and more. Here are some commonly used Spring MVC web annotations along with examples:
+
+- `@Controller:` annotation is used in Spring MVC to mark a class as a controller component. It acts as a request handler and handles incoming HTTP requests, performing the necessary processing and returning a response.
+
+Controllers in Spring MVC are responsible for processing user requests, interacting with business logic or services, and returning a view or response to the client.
+
+```java
+   import org.springframework.stereotype.Controller;
+  import org.springframework.web.bind.annotation.RequestMapping;
+  
+  @Controller
+  public class MyController {
+      @RequestMapping("/hello")
+      public String hello() {
+          return "helloPage";
+      }
+  }
+
+```
+
+- `@RequestMapping:` This annotation is used to map web requests to specific handler methods. It can be applied at the class level and/or method level. You can specify request paths, HTTP methods, request parameters, headers, etc.
+  
+```java
+  import org.springframework.web.bind.annotation.RequestMapping;
+  import org.springframework.web.bind.annotation.RequestMethod;
+  
+  @Controller
+  @RequestMapping("/api")
+  public class MyController {
+      @RequestMapping(value = "/hello", method = RequestMethod.GET)
+      public String hello() {
+          return "helloPage";
+      }
+  }
+```
+
+- `@GetMapping`, `@PostMapping`, `@PutMapping`, `@DeleteMapping`: These annotations are shortcuts for @RequestMapping with specific HTTP methods (GET, POST, PUT, DELETE).
+
+```java
+  import org.springframework.web.bind.annotation.GetMapping;
+  import org.springframework.web.bind.annotation.PostMapping;
+  
+  @Controller
+  @RequestMapping("/api")
+  public class MyController {
+
+      @GetMapping("/hello")
+      public String hello() {
+          return "helloPage";
+      }
+  
+      @PostMapping("/create")
+      public String create() {
+          return "createPage";
+      }
+  }
+
+```
+ - `@RequestParam:` This annotation binds request parameters to method parameters.
+
+  ```java
+   import org.springframework.web.bind.annotation.RequestParam;
+
+  @Controller
+  public class MyController {
+      @GetMapping("/hello")
+      public String hello(@RequestParam("name") String name) {
+          return "helloPage";
+      }
+  }
+
+```
+- `@ResponseBody:` This annotation indicates that the return value of the method should be serialized directly to the HTTP response body.
+- When you use the @ResponseBody annotation on a method, Spring converts the return value and writes it to the HTTP response automatically. Each method in the Controller class must be annotated with `@ResponseBody`.
+- The `@ResponseBody` annotation tells a controller that the object returned is automatically serialized into JSON and passed back into the HttpResponse object.
+
+```java
+     import org.springframework.web.bind.annotation.ResponseBody;
+  
+      @Controller
+      public class MyController {
+          @GetMapping("/api/data")
+          @ResponseBody
+          public MyData getData() {
+              return new MyData("value");
+          }
+      }
+ ```
+
+- `@ExceptionHandler` annotation for handling exceptions in specific handler classes and/or handler methods.
+Handler methods which are annotated with this annotation are allowed to have very flexible signatures.
+Spring calls this method when a request handler method throws any of the specified exceptions. The caught exception can be passed to the method as an argument:
+
+```java
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<?> resourceNotFoundException(ResourceNotFoundException ex, WebRequest request) {
+      ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(), request.getDescription(false));
+      return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
+}
+
+ ```
