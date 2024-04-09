@@ -533,4 +533,9 @@ This annotation is used to mark the main class of the Spring Boot application. I
 
 - `src/test/java:` This folder contains test source code for your application. It mirrors the structure of the src/main/java folder and includes tests for controllers, services, and other components of your application.
 
+- `mvnw and mvnw.cmd:` These are Maven wrapper scripts. They allow you to build and run your Maven project without needing to install Maven separately on your system. This ensures that everyone working on the project uses the same version of Maven.
+
+- `pom.xml:` This is the Project Object Model (POM) file for your Maven project. It contains project configuration and dependencies. Maven uses this file to build the project, manage dependencies, and perform various other tasks.
+
+- `README.md:` This is typically a Markdown file containing project documentation, instructions for developers, setup guides, etc. It helps onboard new developers to the project and provides important information about the project's structure and usage.
   
