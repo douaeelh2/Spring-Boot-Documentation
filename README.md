@@ -668,35 +668,99 @@ The status codes defined in HTTP are the following:
 
 Controllers in Spring MVC are responsible for processing user requests, interacting with business logic or services, and returning a view or response to the client.
 
-```java
-   import org.springframework.stereotype.Controller;
-  import org.springframework.web.bind.annotation.RequestMapping;
+  ```java
+     import org.springframework.stereotype.Controller;
+    import org.springframework.web.bind.annotation.RequestMapping;
+    
+    @Controller
+    public class MyController {
+        @RequestMapping("/hello")
+        public String hello() {
+            return "helloPage";
+        }
+    }
   
-  @Controller
-  public class MyController {
-      @RequestMapping("/hello")
-      public String hello() {
-          return "helloPage";
-      }
-  }
-
-```
+  ```
 
 - `@RequestMapping:` This annotation is used to map web requests to specific handler methods. It can be applied at the class level and/or method level. You can specify request paths, HTTP methods, request parameters, headers, etc.
-  
-```java
-  import org.springframework.web.bind.annotation.RequestMapping;
-  import org.springframework.web.bind.annotation.RequestMethod;
-  
-  @Controller
-  @RequestMapping("/api")
-  public class MyController {
-      @RequestMapping(value = "/hello", method = RequestMethod.GET)
-      public String hello() {
-          return "helloPage";
+
+    - `Class level:`  When you use the `@RequestMapping` annotation at the class level of a controller, it means that all methods within that controller will be mapped to the base URL specified in the class-level annotation. This essentially sets a prefix for all URLs defined in the methods of the controller.
+    - `URL Mapping:` You specify the URL that the method will respond to. For example, if you put `@RequestMapping("/products")` above a method, that method will respond to all requests with the URL "/products".
+      
+   ```java
+       @Controller
+      @RequestMapping("/products")
+      public class ProductController {
+      
+          @RequestMapping(method = RequestMethod.GET)
+          public String getAllProducts() {
+              // Logic to get all products
+              return "products_list";
+          }
       }
-  }
-```
+  ```
+  - `HTTP Methods:` You can specify which HTTP methods the method will respond to. For example, if you put `@RequestMapping(value = "/product", method = RequestMethod.GET)` above a method, that method will only respond to GET requests.
+
+  ```java
+     @Controller
+    @RequestMapping("/products")
+    public class ProductController {
+    
+        @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+        public String getProductById(@PathVariable("id") Long id) {
+            // Logic to get product by ID
+            return "product_details";
+        }
+    }
+  
+  ```
+    
+  - `Query Parameters:` You can filter queries based on the parameters they contain. For example, if you put `@RequestMapping(value = "/product", params = "id")` above a method, that method will only respond to requests that contain an "id" parameter.
+
+  ```java
+     @Controller
+    @RequestMapping("/products")
+    public class ProductController {
+    
+        @RequestMapping(value = "/search", method = RequestMethod.POST, params = "name")
+        public String searchProductByName(@RequestParam("name") String name) {
+            // Logic to search product by name
+            return "search_results";
+        }
+    }
+  
+  ```
+    
+  - `Headers:` You can filter requests based on the HTTP headers they contain. For example, if you put `@RequestMapping(value = "/product", headers = "Accept=application/json")` above a method, that method will only respond to requests that accept responses in `JSON` format.
+
+   ```java
+       @Controller
+      @RequestMapping("/products")
+      public class ProductController {
+      
+          @RequestMapping(value = "/update", method = RequestMethod.PUT, headers = "Content-Type=application/json")
+          public String updateProduct(@RequestBody Product product) {
+              // Logic to update a product
+              return "product_updated";
+          }
+      }
+  
+  ```
+  - `Content type:` You can specify the type of content that the method can consume or produce. For example, if you put `@RequestMapping(value = "/product", consumes = "application/json", produces = "application/json")` above a method, it means that the method will only process requests containing JSON data and will produce responses also in `JSON`.
+
+  ```java
+      @Controller
+    @RequestMapping("/products")
+    public class ProductController {
+    
+        @RequestMapping(value = "/new", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
+        public ResponseEntity<String> createProduct(@RequestBody Product product) {
+            // Logic to create a new product
+            return new ResponseEntity<>("Product created successfully", HttpStatus.CREATED);
+        }
+    }
+  
+  ```
 
 - `@GetMapping`, `@PostMapping`, `@PutMapping`, `@DeleteMapping`: These annotations are shortcuts for @RequestMapping with specific HTTP methods (GET, POST, PUT, DELETE).
 
@@ -721,21 +785,21 @@ Controllers in Spring MVC are responsible for processing user requests, interact
 
 ```
  - `@RequestParam:` This annotation binds request parameters to method parameters.
+ - Used to extract request parameters from the URL.
+ - Parameters are typically in the form `?param=value` in the URL.
+ - These parameters are `optional` by default unless you specify required=true.
+ - For example, in the URL `/product?id=123`, id is a request parameter.
 
   ```java
-   import org.springframework.web.bind.annotation.RequestParam;
-
-  @Controller
-  public class MyController {
-      @GetMapping("/hello")
-      public String hello(@RequestParam("name") String name) {
-          return "helloPage";
-      }
-  }
-
+   @GetMapping("/product")
+    public String getProductById(@RequestParam("id") Long id) {
+        // Implementation to get product by ID
+    }
 ```
+
 - `@ResponseBody:` This annotation indicates that the return value of the method should be serialized directly to the HTTP response body.
-- When you use the @ResponseBody annotation on a method, Spring converts the return value and writes it to the HTTP response automatically. Each method in the Controller class must be annotated with `@ResponseBody`.
+- When you use the `@ResponseBody` annotation on a method, Spring converts the return value and writes it to the HTTP response automatically. Each method in the Controller class must be annotated with `@ResponseBody`.
+  
 - The `@ResponseBody` annotation tells a controller that the object returned is automatically serialized into JSON and passed back into the HttpResponse object.
 
 ```java
@@ -750,6 +814,16 @@ Controllers in Spring MVC are responsible for processing user requests, interact
           }
       }
  ```
+
+```java
+     @ResponseBody
+    @RequestMapping("/hello")
+    String hello() {
+        return "Hello World!";
+    }
+
+```
+
 
 - `@ExceptionHandler` annotation for handling exceptions in specific handler classes and/or handler methods.
 Handler methods which are annotated with this annotation are allowed to have very flexible signatures.
