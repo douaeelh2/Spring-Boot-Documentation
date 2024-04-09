@@ -860,7 +860,7 @@ This annotation indicates that the return value of the method should be serializ
   ```
 
 ### 7. @RestController:  
-- is a specific annotation in Spring MVC that combines the functionality of @Controller and @ResponseBody. It's used to annotate controller classes that handle HTTP requests in RESTful applications. In other words, `@RestController` is essentially a simplified version of @Controller intended to be used in the context of building RESTful APIs.
+- is a specific annotation in Spring MVC that combines the functionality of `@Controller` and `@ResponseBody`. It's used to annotate controller classes that handle HTTP requests in RESTful applications. In other words, `@RestController` is essentially a simplified version of @Controller intended to be used in the context of building RESTful APIs.
 - When a class is annotated with `@RestController`, each method in that class is automatically annotated with `@ResponseBody`. This means that each method in the controller class directly returns the result as an HTTP response, without going through view resolution.
 
    ```java
