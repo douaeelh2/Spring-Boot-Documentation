@@ -689,8 +689,8 @@ Controllers in Spring MVC are responsible for processing user requests, interact
 ### 3. @RequestMapping:
 This annotation is used to map web requests to specific handler methods. It can be applied at the class level and/or method level. You can specify request paths, HTTP methods, request parameters, headers, etc.
 
-    - `Class level:`  When you use the `@RequestMapping` annotation at the class level of a controller, it means that all methods within that controller will be mapped to the base URL specified in the class-level annotation. This essentially sets a prefix for all URLs defined in the methods of the controller.
-    - `URL Mapping:` You specify the URL that the method will respond to. For example, if you put `@RequestMapping("/products")` above a method, that method will respond to all requests with the URL "/products".
+   - `Class level:`  When you use the `@RequestMapping` annotation at the class level of a controller, it means that all methods within that controller will be mapped to the base URL specified in the class-level annotation. This essentially sets a prefix for all URLs defined in the methods of the controller.
+   - `URL Mapping:` You specify the URL that the method will respond to. For example, if you put `@RequestMapping("/products")` above a method, that method will respond to all requests with the URL "/products".
       
    ```java
        @Controller
