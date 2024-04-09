@@ -609,7 +609,7 @@ Go to Spring Initializer in your web browser.The best thing about Spring initial
 
 ```
 
-### 7.Run Your Application: 
+### 7. Run Your Application: 
 - Run the main class (typically named Application) in your IDE or use terminal commands (./mvnw spring-boot:run for Maven, ./gradlew bootRun for Gradle).In STS right-click on your project select run as spring boot app.
 
 ### 8. Access Your App: 
