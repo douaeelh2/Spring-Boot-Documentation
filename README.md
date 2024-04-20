@@ -34,7 +34,9 @@ This documentation serves as a comprehensive guide to understanding and using Sp
    
  6. [Spring Data JPA and Hibernate](#spring-data-JPA-and-hibernate)
       - [What is Spring Data ?](#what-is-spring-data)
-      - [Spring Data JPA](#spring-data-jpa)
+      - [Spring Data JPA & Hibernate](#spring-data-jpa-&-hibernate)
+      - [Spring Data REST](#spring-data-rest)
+      - [Spring Data MongoDB](#spring-data-jdbc-mongoDB)
       - [Spring Data JDBC](#spring-data-jdbc)
       - [Using QueryDSL](#using-querydsl)
       - [Transaction Management](#transaction-management)
@@ -1108,10 +1110,14 @@ Spring Data offers support for a wide range of datastores including relational d
   Neo4j is a popular `graph database` that represents data as `nodes`, `relationships`, and `properties`. Spring Data Neo4j allows you to integrate Neo4j with Spring applications and provides support for modeling, querying, and traversing graph data using domain objects and annotations.
 
 - ### Spring Data REST:
-  This module enables developers to expose Spring Data repositories as `RESTful APIs` automatically. It allows clients to perform CRUD operations on data entities using `HTTP methods` and supports features like pagination, sorting, and filtering out-of-the-box.
+  This module enables developers to expose Spring Data repositories as `RESTful APIs` automatically. It allows clients to perform CRUD operations on data entities using `HTTP methods` and supports features like pagination, sorting, and filtering out-of-the-box.  
   
 - ### Spring Data Graph:
   Spring Data Graph is a module for working with `graph databases`, such as `Neo4j`, in Spring applications. It provides support for defining and querying graph structures using domain objects and annotations, as well as integrating with other Spring Data modules for relational or NoSQL data access.
 
 - ### Embedded databases:
   Spring Boot, a popular companion to Spring Data, offers embedded database support out-of-the-box. You can easily configure embedded databases like `H2`, `HSQLDB`, and `Derby` for development and testing purposes without requiring a separate database server.
+
+
+# Spring Data JPA & Hibernate:
+
