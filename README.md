@@ -1099,7 +1099,7 @@ Spring Data offers support for a wide range of datastores including relational d
 - ### Spring Data JDBC:
   While Spring Data JPA focuses on ORM (Object-Relational Mapping) with JPA, Spring Data JDBC offers a more lightweight approach for working with relational databases using plain SQL queries. It provides support for mapping query results to Java objects and simplifies CRUD (Create, Read, Update, Delete) operations without requiring the use of an ORM framework.
   
-- #### Spring Data Couchbase:
+- ### Spring Data Couchbase:
   Couchbase is a distributed NoSQL database that supports flexible JSON documents and offers features like high availability, scalability, and full-text search. Spring Data Couchbase allows you to integrate Couchbase with Spring applications and provides support for querying, indexing, and managing Couchbase documents.
   
 - ### Spring Data Elasticsearch:
