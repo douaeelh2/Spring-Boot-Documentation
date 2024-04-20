@@ -1072,7 +1072,7 @@ Let's say you have a Spring MVC application where you want to display informatio
   
   Spring Data offers support for a wide range of datastores including relational databases like `MySQL`, `PostgreSQL`, and `Oracle`, as well as NoSQL databases like `MongoDB`, `Redis`, `Cassandra`, and more.
   
-  ## 1. Key features of Spring Data include:
+  ## 1. Key features of Spring Data
   
   - `Repository abstraction:` Spring Data provides a repository abstraction that greatly reduces the amount of boilerplate code needed for data access. Developers define interfaces for repositories, and Spring Data automatically generates implementations for these interfaces at runtime.
     
