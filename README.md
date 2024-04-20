@@ -1216,4 +1216,4 @@ Let's say you have a Spring MVC application where you want to display informatio
     }
   ```
   
-  - This strategy is suitable for databases like `MySQL` and `PostgreSQL` that support `auto-incrementing` columns. The database automatically assigns a unique value to the id field for each new record.
+- This strategy is suitable for databases like `MySQL` and `PostgreSQL` that support `auto-incrementing` columns. The database automatically assigns a unique value to the id field for each new record.
