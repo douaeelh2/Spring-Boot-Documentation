@@ -32,7 +32,7 @@ This documentation serves as a comprehensive guide to understanding and using Sp
       - [Building RESTful APIs](#building-restful-apis)
       - [WebSockets](#websockets)
    
- 6. [Spring Data JPA and Hibernate](#spring-data-JPA-and-hibernate)
+ 5. [Spring Data](#spring-data)
       - [What is Spring Data ?](#what-is-spring-data)
       - [Spring Data JPA & Hibernate](#spring-data-jpa-&-hibernate)
       - [Spring Data REST](#spring-data-rest)
@@ -1064,60 +1064,62 @@ Let's say you have a Spring MVC application where you want to display informatio
 - When the `getUser()` method is invoked, it retrieves the user details (from a database or some service) and adds it to the ModelAndView with the name "userView".
 - The view (e.g., userView.jsp or userView.html) can access the user object using the name "user" and render its attributes like name, email, and age.
 
-# What is Spring Data ?
+# 5. Spring Data : 
 
-- `Spring Data` is a part of the larger Spring Framework ecosystem, providing a unified and easy way to access various kinds of datastores, both `relational` and `non-relational`, in a consistent manner. It aims to simplify data access in Spring applications by abstracting away the complexities of dealing with different data access technologies and providing common `patterns` and `APIs` for working with databases.
-
-Spring Data offers support for a wide range of datastores including relational databases like `MySQL`, `PostgreSQL`, and `Oracle`, as well as NoSQL databases like `MongoDB`, `Redis`, `Cassandra`, and more.
-
-## 1. Key features of Spring Data include:
-
-- `Repository abstraction:` Spring Data provides a repository abstraction that greatly reduces the amount of boilerplate code needed for data access. Developers define interfaces for repositories, and Spring Data automatically generates implementations for these interfaces at runtime.
+  # What is Spring Data ?
   
-- `Query methods:` Spring Data allows developers to define query methods in repository interfaces by simply declaring method signatures following a naming convention. These query methods are automatically implemented by Spring Data based on the method names, saving developers from writing SQL or other query languages.
+  - `Spring Data` is a part of the larger Spring Framework ecosystem, providing a unified and easy way to access various kinds of datastores, both `relational` and `non-relational`, in a consistent manner. It aims to simplify data access in Spring applications by abstracting away the complexities of dealing with different data access technologies and providing common `patterns` and `APIs` for working with databases.
   
-- `QueryDSL support:` For more complex queries, Spring Data supports integration with QueryDSL, a framework for building type-safe queries in Java.
+  Spring Data offers support for a wide range of datastores including relational databases like `MySQL`, `PostgreSQL`, and `Oracle`, as well as NoSQL databases like `MongoDB`, `Redis`, `Cassandra`, and more.
   
-- `Pagination and sorting:` Spring Data provides built-in support for pagination and sorting of query results, making it easy to handle large datasets.
+  ## 1. Key features of Spring Data include:
   
-- `Auditing:` Spring Data can automatically track and manage auditing information such as creation time, modification time, and the user who made the changes.
+  - `Repository abstraction:` Spring Data provides a repository abstraction that greatly reduces the amount of boilerplate code needed for data access. Developers define interfaces for repositories, and Spring Data automatically generates implementations for these interfaces at runtime.
+    
+  - `Query methods:` Spring Data allows developers to define query methods in repository interfaces by simply declaring method signatures following a naming convention. These query methods are automatically implemented by Spring Data based on the method names, saving developers from writing SQL or other query languages.
+    
+  - `QueryDSL support:` For more complex queries, Spring Data supports integration with QueryDSL, a framework for building type-safe queries in Java.
+    
+  - `Pagination and sorting:` Spring Data provides built-in support for pagination and sorting of query results, making it easy to handle large datasets.
+    
+  - `Auditing:` Spring Data can automatically track and manage auditing information such as creation time, modification time, and the user who made the changes.
+    
+  - `Integration with other Spring projects:` Spring Data integrates seamlessly with other Spring projects such as Spring MVC, Spring Boot, and Spring Security, making it easy to build end-to-end Spring applications.
   
-- `Integration with other Spring projects:` Spring Data integrates seamlessly with other Spring projects such as Spring MVC, Spring Boot, and Spring Security, making it easy to build end-to-end Spring applications.
-
-## 2. Spring Data Modules
-
-![spring-data](https://github.com/douaeelh2/Spring-Boot-Documentation/assets/127549220/e47327ba-6487-406d-998c-591f043c9a95)
-
-- ### Spring Data JPA:
-  This module provides support for working with `relational databases` using `JPA (Java Persistence API)`. It simplifies data access by offering features like repository interfaces, which allow you to define query methods by simply declaring their method signatures. Spring Data JPA also supports `pagination`, `sorting`, and criteria-based `queries`.
+  ## 2. Spring Data Modules
   
-- ### Spring Data MongoDB:
-  MongoDB is a popular `NoSQL database` that stores data in a flexible, `JSON-like` format. Spring Data MongoDB provides integration with MongoDB in - Spring applications. It allows you to work with `MongoDB documents` using familiar Spring idioms and provides support for `querying`, `indexing`, and `mapping` between Java objects and MongoDB documents.
+  ![spring-data](https://github.com/douaeelh2/Spring-Boot-Documentation/assets/127549220/e47327ba-6487-406d-998c-591f043c9a95)
   
-- ### Spring Data Redis:
-  Redis is an `in-memory` data store that can be used as a `cache`, `message broker`, or as a database for storing `key-value` pairs, lists, sets, and other data structures. Spring Data Redis simplifies working with Redis in Spring applications by providing abstractions for working with Redis data structures, transactions, and Pub/Sub messaging.
+  - ### Spring Data JPA:
+    This module provides support for working with `relational databases` using `JPA (Java Persistence API)`. It simplifies data access by offering features like repository interfaces, which allow you to define query methods by simply declaring their method signatures. Spring Data JPA also supports `pagination`, `sorting`, and criteria-based `queries`.
+    
+  - ### Spring Data MongoDB:
+    MongoDB is a popular `NoSQL database` that stores data in a flexible, `JSON-like` format. Spring Data MongoDB provides integration with MongoDB in - Spring applications. It allows you to work with `MongoDB documents` using familiar Spring idioms and provides support for `querying`, `indexing`, and `mapping` between Java objects and MongoDB documents.
+    
+  - ### Spring Data Redis:
+    Redis is an `in-memory` data store that can be used as a `cache`, `message broker`, or as a database for storing `key-value` pairs, lists, sets, and other data structures. Spring Data Redis simplifies working with Redis in Spring applications by providing abstractions for working with Redis data structures, transactions, and Pub/Sub messaging.
+    
+  - ### Spring Data JDBC:
+    While Spring Data JPA focuses on `ORM (Object-Relational Mapping)` with `JPA`, Spring Data JDBC offers a more lightweight approach for working with `relational` databases using plain `SQL queries`. It provides support for mapping query results to Java objects and simplifies `CRUD (Create, Read, Update, Delete)` operations without requiring the use of an ORM framework.
+    
+  - ### Spring Data Couchbase:
+    Couchbase is a `distributed NoSQL` database that supports flexible JSON documents and offers features like high availability, scalability, and full-text search. Spring Data Couchbase allows you to integrate Couchbase with Spring applications and provides support for querying, indexing, and managing Couchbase documents.
+    
+  - ### Spring Data Elasticsearch:
+    Elasticsearch is a `distributed search` and analytics engine that is commonly used for full-text search, log analysis, and data visualization. Spring Data Elasticsearch simplifies working with Elasticsearch in Spring applications by providing abstractions for indexing, querying, and mapping between Java objects and Elasticsearch documents.
   
-- ### Spring Data JDBC:
-  While Spring Data JPA focuses on `ORM (Object-Relational Mapping)` with `JPA`, Spring Data JDBC offers a more lightweight approach for working with `relational` databases using plain `SQL queries`. It provides support for mapping query results to Java objects and simplifies `CRUD (Create, Read, Update, Delete)` operations without requiring the use of an ORM framework.
+  - ### Spring Data Neo4j:
+    Neo4j is a popular `graph database` that represents data as `nodes`, `relationships`, and `properties`. Spring Data Neo4j allows you to integrate Neo4j with Spring applications and provides support for modeling, querying, and traversing graph data using domain objects and annotations.
   
-- ### Spring Data Couchbase:
-  Couchbase is a `distributed NoSQL` database that supports flexible JSON documents and offers features like high availability, scalability, and full-text search. Spring Data Couchbase allows you to integrate Couchbase with Spring applications and provides support for querying, indexing, and managing Couchbase documents.
+  - ### Spring Data REST:
+    This module enables developers to expose Spring Data repositories as `RESTful APIs` automatically. It allows clients to perform CRUD operations on data entities using `HTTP methods` and supports features like pagination, sorting, and filtering out-of-the-box.  
+    
+  - ### Spring Data Graph:
+    Spring Data Graph is a module for working with `graph databases`, such as `Neo4j`, in Spring applications. It provides support for defining and querying graph structures using domain objects and annotations, as well as integrating with other Spring Data modules for relational or NoSQL data access.
   
-- ### Spring Data Elasticsearch:
-  Elasticsearch is a `distributed search` and analytics engine that is commonly used for full-text search, log analysis, and data visualization. Spring Data Elasticsearch simplifies working with Elasticsearch in Spring applications by providing abstractions for indexing, querying, and mapping between Java objects and Elasticsearch documents.
-
-- ### Spring Data Neo4j:
-  Neo4j is a popular `graph database` that represents data as `nodes`, `relationships`, and `properties`. Spring Data Neo4j allows you to integrate Neo4j with Spring applications and provides support for modeling, querying, and traversing graph data using domain objects and annotations.
-
-- ### Spring Data REST:
-  This module enables developers to expose Spring Data repositories as `RESTful APIs` automatically. It allows clients to perform CRUD operations on data entities using `HTTP methods` and supports features like pagination, sorting, and filtering out-of-the-box.  
+  - ### Embedded databases:
+    Spring Boot, a popular companion to Spring Data, offers embedded database support out-of-the-box. You can easily configure embedded databases like `H2`, `HSQLDB`, and `Derby` for development and testing purposes without requiring a separate database server.
   
-- ### Spring Data Graph:
-  Spring Data Graph is a module for working with `graph databases`, such as `Neo4j`, in Spring applications. It provides support for defining and querying graph structures using domain objects and annotations, as well as integrating with other Spring Data modules for relational or NoSQL data access.
-
-- ### Embedded databases:
-  Spring Boot, a popular companion to Spring Data, offers embedded database support out-of-the-box. You can easily configure embedded databases like `H2`, `HSQLDB`, and `Derby` for development and testing purposes without requiring a separate database server.
-
-
-# Spring Data JPA & Hibernate:
-
+  
+  # Spring Data JPA & Hibernate:
+  
