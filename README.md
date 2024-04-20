@@ -115,7 +115,7 @@ Spring Boot is built on the top of the conventional spring framework. So, it pro
     Creating a REST API is very easy in Spring Boot. Just the annotation @RestController and @RequestMapping(/endPoint) over the controller class does the work.
    
  - ### It includes embedded Tomcat-server:
-    Unlike Spring MVC project where we have to manually add and install the tomcat server, Spring Boot comes with an embedded Tomcat server, so that the applications can be     hosted on it.
+    Unlike Spring MVC project where we have to manually add and install the tomcat server, Spring Boot comes with an embedded Tomcat server, so that the applications can be hosted on it.
 
  - ### Deployment is very easy, war and jar file can be easily deployed in the tomcat server:
    war or jar files can be directly deployed on the Tomcat Server and Spring Boot provides the facility to convert our project into war or jar files. Also, the instance of     Tomcat can be run on the cloud as well.
@@ -1132,12 +1132,65 @@ Let's say you have a Spring MVC application where you want to display informatio
    
 - Hibernate is a `Java-based ORM` tool that provides a framework for mapping application domain `objects` to `relational database tables` and vice versa.
 
+- Hibernate is the most popular `JPA implementation` and one of the most popular Java ORM frameworks. Hibernate is an `additional layer` on top of JDBC and enables you to implement a database-independent persistence layer. It provides an `object-relational` mapping implementation that maps your `database records` to `Java objects` and generates the required `SQL statements` to replicate all operations to the database.
+
+ <div style="text-align:center;">
+  <img src="https://github.com/douaeelh2/Spring-Boot-Documentation/assets/127549220/93700c96-475c-4e9f-993b-3bc4c4c2d81b" style="width:100%">
+</div> <br />
+
+   ## Spring Data Vs Spring Data JPA Example
+   - Suppose you have a User entity and you want to retrieve all users whose name starts with "John".
+
+   - With JPA alone, you might write a `JPQL (Java Persistence Query Language)` query like this:
+
+     ```java
+         String jpql = "SELECT u FROM User u WHERE u.name LIKE 'John%'";
+         List<User> users = entityManager.createQuery(jpql, User.class).getResultList();
+     ```
+
+   - With Spring Data JPA, you can simply declare a method in your `repository interface` like this:
+     
+   ```java
+      public interface UserRepository extends JpaRepository<User, Long> {
+      List<User> findByNameStartsWith(String name);
+    }
+   ```
+  - And calling this method would be:
+    
+  ```java
+     List<User> users = userRepository.findByNameStartsWith("John");
+  ```
+
+# Spring Data JPA & Hibernate Annotations
+
+### 1. @Entity
+- The `@Entity` annotation is a fundamental building block of JPA, indicating that a Java class is a `persistent entity`, representing a `database table`. Each instance of an @Entity class corresponds to a `row` in the `associated database table`, and the class's fields are mapped to the table columns. 
+
+- Each `attribute` in this class is typically associated with a corresponding column in the database table, although this mapping can be customized with additional annotations such as `@Column`. An entity often requires a `unique identifier`, usually specified with the `@Id` annotation, and annotations like `@GeneratedValue` can be used to define how that identifier is generated.
+
+- The `@Entity` annotation can be combined with other annotations such as `@OneToOne`, `@OneToMany`, `@ManyToOne`, `@ManyToMany` to define `relationships` between different `entities`, making it easier to map relationships between database tables.
+- Additionally, JPA provides lifecycle annotations such as @PrePersist, `@PostPersist`, `@PreUpdate`, `@PostUpdate`, which allow you to specify methods to be executed before or after certain operations on an entity, such as insert or update in the database.
+- In summary, the @Entity annotation is a central element in developing Java applications with data persistence, facilitating the mapping between Java objects and database tables and the management of entity lifecycle operations.
+
+  The below diagram shows the mapping between the Student persistent class and the student database table:
+
   <div style="text-align:center;">
   <img src="https://github.com/douaeelh2/Spring-Boot-Documentation/assets/127549220/a15beb11-dbb2-48de-9615-3aec17f23552" style="width:100%">
  </div> <br />
 
-- Hibernate is the most popular `JPA implementation` and one of the most popular Java ORM frameworks. Hibernate is an `additional layer` on top of JDBC and enables you to implement a database-independent persistence layer. It provides an `object-relational` mapping implementation that maps your `database records` to `Java objects` and generates the required `SQL statements` to replicate all operations to the database.
+  
+### 2. @Id
 
-- <div style="text-align:center;">
-  <img src="https://github.com/douaeelh2/Spring-Boot-Documentation/assets/127549220/93700c96-475c-4e9f-993b-3bc4c4c2d81b" style="width:100%">
-</div> <br />
+- The @Id annotation marks a `field` as `the primary key` of an entity class. It serves as the bridge between the Java object representation and its corresponding database row. Every JPA entity must have a `field annotated with @Id` to be uniquely `identified`. 
+
+- The field or property to which the @Id annotation is applied should be one of the following types: 
+  - any Java primitive type
+  - any primitive wrapper type
+  - String
+  - java.util.Date
+  - java.sql.Date
+  - java.math.BigDecimal
+  - java.math.BigInteger
+  
+- To create a simple primary key, you can directly apply the @Id annotation to a field in the entity class. 
+
