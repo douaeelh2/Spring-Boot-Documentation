@@ -1134,11 +1134,10 @@ Let's say you have a Spring MVC application where you want to display informatio
 
   <div style="text-align:center;">
   <img src="https://github.com/douaeelh2/Spring-Boot-Documentation/assets/127549220/a15beb11-dbb2-48de-9615-3aec17f23552" style="width:100%">
- </div> <br /> <br />
-
+ </div> <br />
 
 - Hibernate is the most popular `JPA implementation` and one of the most popular Java ORM frameworks. Hibernate is an `additional layer` on top of JDBC and enables you to implement a database-independent persistence layer. It provides an `object-relational` mapping implementation that maps your `database records` to `Java objects` and generates the required `SQL statements` to replicate all operations to the database.
 
 - <div style="text-align:center;">
   <img src="https://github.com/douaeelh2/Spring-Boot-Documentation/assets/127549220/93700c96-475c-4e9f-993b-3bc4c4c2d81b" style="width:100%">
-</div> <br /> <br />
+</div> <br />
