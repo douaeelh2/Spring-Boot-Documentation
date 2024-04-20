@@ -1122,18 +1122,23 @@ Let's say you have a Spring MVC application where you want to display informatio
   
   
   # Spring Data JPA & Hibernate
-   ### Spring Data JPA 
+   ## Spring Data JPA 
    
   - Spring Data JPA is a part of the Spring Data project, which aims to simplify data access in Java applications by providing a higher-level abstraction over data persistence technologies. Specifically, Spring Data JPA provides a way to work with `JPA (Java Persistence API)` in a Spring application more easily.
 
  - JPA is a Java specification for `mapping` Java objects to relational database tables and vice versa. It provides a set of interfaces and annotations for defining `entities`, `relationships` between entities, and `querying data` from the database using `object-oriented` criteria.
 
-   ### What is the Hibernate Framework ?
+ ## What is the Hibernate Framework ?
    
 - Hibernate is a `Java-based ORM` tool that provides a framework for mapping application domain `objects` to `relational database tables` and vice versa.
 
-![hibernate](https://github.com/douaeelh2/Spring-Boot-Documentation/assets/127549220/a15beb11-dbb2-48de-9615-3aec17f23552)
+  <div style="text-align:center;">
+  <img src="https://github.com/douaeelh2/Spring-Boot-Documentation/assets/127549220/a15beb11-dbb2-48de-9615-3aec17f23552" style="width:100%">
+ </div> <br /> <br />
+
 
 - Hibernate is the most popular `JPA implementation` and one of the most popular Java ORM frameworks. Hibernate is an `additional layer` on top of JDBC and enables you to implement a database-independent persistence layer. It provides an `object-relational` mapping implementation that maps your `database records` to `Java objects` and generates the required `SQL statements` to replicate all operations to the database.
 
-![hibernate2](https://github.com/douaeelh2/Spring-Boot-Documentation/assets/127549220/93700c96-475c-4e9f-993b-3bc4c4c2d81b)
+- <div style="text-align:center;">
+  <img src="https://github.com/douaeelh2/Spring-Boot-Documentation/assets/127549220/93700c96-475c-4e9f-993b-3bc4c4c2d81b" style="width:100%">
+</div> <br /> <br />
