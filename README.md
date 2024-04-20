@@ -145,27 +145,6 @@ Spring Boot is built on the top of the conventional spring framework. So, it pro
 
 ### Spring Framework : 
   
-  ```xml
-      <!-- applicationContext.xml -->
-      <beans xmlns="http://www.springframework.org/schema/beans"
-          xmlns:mvc="http://www.springframework.org/schema/mvc"
-          xmlns:context="http://www.springframework.org/schema/context"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="
-              http://www.springframework.org/schema/beans
-              http://www.springframework.org/schema/beans/spring-beans.xsd
-              http://www.springframework.org/schema/mvc
-              http://www.springframework.org/schema/mvc/spring-mvc.xsd
-              http://www.springframework.org/schema/context
-              http://www.springframework.org/schema/context/spring-context.xsd">
-      
-          <context:component-scan base-package="com.example.controller" />
-          <mvc:annotation-driven />
-      
-      </beans>
-  ```
-  
-  
   ```java
       package com.example.controller;
   
@@ -185,27 +164,47 @@ Spring Boot is built on the top of the conventional spring framework. So, it pro
       }
   
   ```
-
+ - `Xml Configuration`
+  
+  ```xml
+      <!-- applicationContext.xml -->
+      <beans xmlns="http://www.springframework.org/schema/beans"
+          xmlns:mvc="http://www.springframework.org/schema/mvc"
+          xmlns:context="http://www.springframework.org/schema/context"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="
+              http://www.springframework.org/schema/beans
+              http://www.springframework.org/schema/beans/spring-beans.xsd
+              http://www.springframework.org/schema/mvc
+              http://www.springframework.org/schema/mvc/spring-mvc.xsd
+              http://www.springframework.org/schema/context
+              http://www.springframework.org/schema/context/spring-context.xsd">
+      
+          <context:component-scan base-package="com.example.controller" />
+          <mvc:annotation-driven />
+      
+      </beans>
+  ```
+ - `Annotation Configuration`
+   
+  ```java
+      package com.example.config;
+      
+      import org.springframework.context.annotation.ComponentScan;
+      import org.springframework.context.annotation.Configuration;
+      import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+      
+      @Configuration
+      @EnableWebMvc
+      @ComponentScan(basePackages = "com.example.controller")
+      public class AppConfig {
+      
+      }
+  ```
 
 ### Spring Boot : 
   
-  ```java
-    package com.example.springbootdemo;
 
-    import org.springframework.boot.SpringApplication;
-    import org.springframework.boot.autoconfigure.SpringBootApplication;
-    
-    @SpringBootApplication
-    public class SpringBootDemoApplication {
-    
-        public static void main(String[] args) {
-            SpringApplication.run(SpringBootDemoApplication.class, args);
-        }
-    }
-
-  ```
-  
-  
   ```java
      package com.example.controller;
 
@@ -223,8 +222,23 @@ Spring Boot is built on the top of the conventional spring framework. So, it pro
               return "Hello, World!";
           }
       }
-
   
+  ```
+
+  ```java
+    package com.example.springbootdemo;
+
+    import org.springframework.boot.SpringApplication;
+    import org.springframework.boot.autoconfigure.SpringBootApplication;
+    
+    @SpringBootApplication
+    public class SpringBootDemoApplication {
+    
+        public static void main(String[] args) {
+            SpringApplication.run(SpringBootDemoApplication.class, args);
+        }
+    }
+
   ```
 
 ### Example 2 : Hibernate Configuration
