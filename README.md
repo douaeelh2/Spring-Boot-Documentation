@@ -1064,7 +1064,7 @@ Let's say you have a Spring MVC application where you want to display informatio
 - When the `getUser()` method is invoked, it retrieves the user details (from a database or some service) and adds it to the ModelAndView with the name "userView".
 - The view (e.g., userView.jsp or userView.html) can access the user object using the name "user" and render its attributes like name, email, and age.
 
-# 5. Spring Data : 
+# 5. Spring Data  
 
   # What is Spring Data ?
   
@@ -1121,5 +1121,5 @@ Let's say you have a Spring MVC application where you want to display informatio
     Spring Boot, a popular companion to Spring Data, offers embedded database support out-of-the-box. You can easily configure embedded databases like `H2`, `HSQLDB`, and `Derby` for development and testing purposes without requiring a separate database server.
   
   
-  # Spring Data JPA & Hibernate:
+  # Spring Data JPA & Hibernate
   
