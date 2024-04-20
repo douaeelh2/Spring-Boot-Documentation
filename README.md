@@ -1087,32 +1087,35 @@ Spring Data offers support for a wide range of datastores including relational d
 
 ![spring-data](https://github.com/douaeelh2/Spring-Boot-Documentation/assets/127549220/e47327ba-6487-406d-998c-591f043c9a95)
 
-- ### Spring Data Commons:
-  This is the core module that provides common infrastructure and functionalities used by all Spring Data modules.
-  
 - ### Spring Data JPA:
-   As discussed earlier, this module provides support for the Java Persistence API (JPA) for relational databases.
+  This module provides support for working with relational databases using JPA (Java Persistence API). It simplifies data access by offering features like repository interfaces, which allow you to define query methods by simply declaring their method signatures. Spring Data JPA also supports pagination, sorting, and criteria-based queries.
   
 - ### Spring Data MongoDB:
-  This module provides support for MongoDB, a NoSQL database, allowing developers to interact with MongoDB using Spring Data's repository abstraction.
+  MongoDB is a popular NoSQL database that stores data in a flexible, JSON-like format. Spring Data MongoDB provides integration with MongoDB in - Spring applications. It allows you to work with MongoDB documents using familiar Spring idioms and provides support for querying, indexing, and mapping between Java objects and MongoDB documents.
   
 - ### Spring Data Redis:
-  This module provides support for Redis, an in-memory data store, allowing developers to interact with Redis using Spring Data's repository abstraction.
+  Redis is an in-memory data store that can be used as a cache, message broker, or as a database for storing key-value pairs, lists, sets, and other data structures. Spring Data Redis simplifies working with Redis in Spring applications by providing abstractions for working with Redis data structures, transactions, and Pub/Sub messaging.
   
 - ### Spring Data JDBC:
-  This module provides support for accessing relational databases using the JDBC (Java Database Connectivity) API, offering an alternative to JPA for simpler data access scenarios.
+  While Spring Data JPA focuses on ORM (Object-Relational Mapping) with JPA, Spring Data JDBC offers a more lightweight approach for working with relational databases using plain SQL queries. It provides support for mapping query results to Java objects and simplifies CRUD (Create, Read, Update, Delete) operations without requiring the use of an ORM framework.
+  
+- #### Spring Data Couchbase:
+  Couchbase is a distributed NoSQL database that supports flexible JSON documents and offers features like high availability, scalability, and full-text search. Spring Data Couchbase allows you to integrate Couchbase with Spring applications and provides support for querying, indexing, and managing Couchbase documents.
   
 - ### Spring Data Elasticsearch:
-  This module provides support for Elasticsearch, a distributed search and analytics engine, allowing developers to interact with Elasticsearch using Spring Data's repository abstraction.
-  
-- ### Spring Data Couchbase:
-  This module provides support for Couchbase, a distributed NoSQL document-oriented database, allowing developers to interact with Couchbase using Spring Data's repository abstraction.
-  
+  Elasticsearch is a distributed search and analytics engine that is commonly used for full-text search, log analysis, and data visualization. Spring Data Elasticsearch simplifies working with Elasticsearch in Spring applications by providing abstractions for indexing, querying, and mapping between Java objects and Elasticsearch documents.
+
 - ### Spring Data Neo4j:
-  This module provides support for Neo4j, a graph database, allowing developers to interact with Neo4j using Spring Data's repository abstraction.
+  Neo4j is a popular graph database that represents data as nodes, relationships, and properties. Spring Data Neo4j allows you to integrate Neo4j with Spring applications and provides support for modeling, querying, and traversing graph data using domain objects and annotations.
+
+- ### Spring Data REST:
+  This module enables developers to expose Spring Data repositories as RESTful APIs automatically. It allows clients to perform CRUD operations on data entities using HTTP methods and supports features like pagination, sorting, and filtering out-of-the-box.
+  
+- ### Spring Data Graph:
+  Spring Data Graph is a module for working with graph databases, such as Neo4j, in Spring applications. It provides support for defining and querying graph structures using domain objects and annotations, as well as integrating with other Spring Data modules for relational or NoSQL data access.
+
+- ### Spring Data Oracle:
+  This module provides support for working with Oracle Database in Spring applications. It includes features such as data source configuration, transaction management, and query execution for interacting with Oracle Database using Spring Data repositories.
 
 - ### Embedded databases:
   Spring Boot, a popular companion to Spring Data, offers embedded database support out-of-the-box. You can easily configure embedded databases like H2, HSQLDB, and Derby for development and testing purposes without requiring a separate database server.
-  
-- ### Spring Data REST:
-  This module enables developers to expose Spring Data repositories as RESTful APIs automatically. It allows clients to perform CRUD operations on data entities using HTTP methods and supports features like pagination, sorting, and filtering out-of-the-box.
