@@ -241,6 +241,17 @@ Spring Boot is built on the top of the conventional spring framework. So, it pro
 
   ```
 
+Spring Framework : 
+- With standard Spring configuration, you explicitly define your application configuration using annotations like `@Configuration`, `@ComponentScan`, and `@EnableWebMvc`.
+- You have to specify the basic Spring MVC configuration using` @EnableWebMvc`.
+- You need to scan packages to find Spring components such as controllers using `@ComponentScan`.
+- You need to manage your project dependencies, including dependency versions.
+  
+Spring Boot:
+- Spring Boot simplifies configuration by providing smart `default configurations`.
+- You don't need to explicitly specify the `Spring MVC` configuration basics or `scan packages` for Spring components like controllers.
+- Spring Boot automatically configures these features based on intelligent conventions and included `dependencies`.
+  
 ### Example 2 : Hibernate Configuration
 
 ### Spring Framwork : 
