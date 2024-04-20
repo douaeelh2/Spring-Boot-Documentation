@@ -1163,7 +1163,7 @@ Let's say you have a Spring MVC application where you want to display informatio
 
 # Spring Data JPA & Hibernate Annotations
 
-### 1. @Entity
+## 1. @Entity
 - The `@Entity` annotation is a fundamental building block of JPA, indicating that a Java class is a `persistent entity`, representing a `database table`. Each instance of an @Entity class corresponds to a `row` in the `associated database table`, and the class's fields are mapped to the table columns. 
 
 - Each `attribute` in this class is typically associated with a corresponding column in the database table, although this mapping can be customized with additional annotations such as `@Column`. An entity often requires a `unique identifier`, usually specified with the `@Id` annotation, and annotations like `@GeneratedValue` can be used to define how that identifier is generated.
@@ -1179,7 +1179,7 @@ Let's say you have a Spring MVC application where you want to display informatio
  </div> <br />
 
   
-### 2. @Id
+## 2. @Id
 
 - The @Id annotation marks a `field` as `the primary key` of an entity class. It serves as the bridge between the Java object representation and its corresponding database row. Every JPA entity must have a `field annotated with @Id` to be uniquely `identified`. 
 
@@ -1194,3 +1194,26 @@ Let's say you have a Spring MVC application where you want to display informatio
   
 - To create a simple primary key, you can directly apply the @Id annotation to a field in the entity class. 
 
+## 3. @GeneratedValue
+- The @GeneratedValue annotation works in conjunction with `@Id` to specify `how` primary key values should be `generated`. JPA provides several generation strategies to accommodate various database configurations and requirements.
+
+  ### 1. GenerationType.IDENTITY -> Database-Generated Auto-Increment:
+
+  ```java
+     @Entity
+    public class Student {
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long id;
+        private String firstName;
+        private String lastName;
+        private String email;
+    
+        public Student() {
+    
+        }
+       // getter and setters
+    }
+  ```
+  
+  - This strategy is suitable for databases like `MySQL` and `PostgreSQL` that support `auto-incrementing` columns. The database automatically assigns a unique value to the id field for each new record.
