@@ -1128,8 +1128,6 @@ Let's say you have a Spring MVC application where you want to display informatio
 
  - JPA is a Java specification for `mapping` Java objects to relational database tables and vice versa. It provides a set of interfaces and annotations for defining `entities`, `relationships` between entities, and `querying data` from the database using `object-oriented` criteria.
 
-![spring-data-jpa-hibernate](https://github.com/douaeelh2/Spring-Boot-Documentation/assets/127549220/334a51f4-7b5b-48e2-894f-88a3acb7cee4)
-
    ### Hibernate
 - Hibernate is an `implementation` of the `JPA specification` and is one of the most popular and widely used `ORM (Object-Relational Mapping)` frameworks in the Java ecosystem. Hibernate simplifies the task of working with `relational databases` in Java applications by handling the mapping between `Java objects` and `database tables`, as well as providing features like caching, lazy loading, and automatic schema generation.
 
