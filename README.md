@@ -1215,5 +1215,52 @@ Let's say you have a Spring MVC application where you want to display informatio
        // getter and setters
     }
   ```
-  
+- With `GenerationType.IDENTITY`, the database is responsible for automatically generating primary key values when inserting a new row into the table. Typically, this is achieved using specific database features such as `auto-increment` columns or sequences.
+-  It may not be supported by all databases or may have limitations on how primary key values are generated, which can limit its `portability` across databases.
 - This strategy is suitable for databases like `MySQL` and `PostgreSQL` that support `auto-incrementing` columns. The database automatically assigns a unique value to the id field for each new record.
+
+
+### 2. GenerationType.SEQUENCE -> Database-Generated Sequence:
+
+  ```java
+      @Entity
+      public class Student {
+          @Id
+          @GeneratedValue(strategy = GenerationType.SEQUENCE)
+          private Long id;
+          private String firstName;
+          private String lastName;
+          private String email;
+      
+          public Student() {
+      
+          }
+         // getter and setters
+      }
+  ```
+- When `GenerationType.SEQUENCE` is used, it indicates that the primary key of an entity will be generated from a `sequence of numbers` in the database.
+-  Databases such as `Oracle` and some other relational database management systems `(RDBMS)` support this type of identifier generation.
+
+### 3. GenerationType.TABLE -> Table-Generated Sequence:
+
+  ```java
+    @Entity
+    public class Student {
+        @Id
+        @GeneratedValue(strategy = GenerationType.TABLE)
+        private Long id;
+        private String firstName;
+        private String lastName;
+        private String email;
+    
+        public Student() {
+    
+        }
+       // getter and setters
+    }
+  ```
+  
+- With `GenerationType.TABLE`, a special table is used to store the values of the generated primary keys.
+- Every time a new object is persisted, JPA consults this special table to get a new primary key value, uses it for the object being persisted, and then updates the table to mark that value as used.
+
+- This strategy is often used when databases do not support sequences or `auto-incremented` identities, or when you need finer control over the generation of primary keys.
