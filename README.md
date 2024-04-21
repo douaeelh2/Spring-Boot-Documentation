@@ -1264,3 +1264,30 @@ Let's say you have a Spring MVC application where you want to display informatio
   - Every time a new object is persisted, JPA consults this special table to get a new primary key value, uses it for the object being persisted, and then updates the table to mark that value as used.
   
   - This strategy is often used when databases do not support sequences or `auto-incremented` identities, or when you need finer control over the generation of primary keys.
+
+### 4. GenerationType.AUTO -> Provider-Defined Strategy:
+
+  ```java
+       @Entity
+      public class Student {
+          @Id
+          @GeneratedValue(strategy = GenerationType.AUTO)
+          private Long id;
+          private String firstName;
+          private String lastName;
+          private String email;
+      
+          public Student() {
+      
+          }
+         // getter and setters
+      }
+  ```
+
+  - When using `GenerationType.AUTO`, JPA examines the capabilities of the database and selects the most appropriate primary key generation strategy from `GenerationType.IDENTITY`, `GenerationType.SEQUENCE`, or `GenerationType.TABLE`.
+  
+  - If the database supports auto-incremented columns, JPA will use `GenerationType.IDENTITY`.
+  - If the database supports sequences, JPA will use `GenerationType.SEQUENCE`.
+  - If neither of the above options is available or if you prefer a more portable solution, JPA will use `GenerationType.TABLE`.
+  - GenerationType.AUTO thus offers increased flexibility and portability, as it allows your application to work across different databases without requiring significant code modifications. 
+
