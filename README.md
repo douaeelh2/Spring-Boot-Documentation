@@ -1218,6 +1218,7 @@ Let's say you have a Spring MVC application where you want to display informatio
   - With `GenerationType.IDENTITY`, the database is responsible for automatically generating primary key values when inserting a new row into the table. Typically, this is achieved using specific database features such as `auto-increment` columns or sequences.
   -  It may not be supported by all databases or may have limitations on how primary key values are generated, which can limit its `portability` across databases.
   - This strategy is suitable for databases like `MySQL` and `PostgreSQL` that support `auto-incrementing` columns. The database automatically assigns a unique value to the id field for each new record.
+  - This strategy is commonly used for attributes of `integer numeric` types (such as `int` or `long`). However, some databases support auto-incrementing for `string` types as well.
 
   
   ### 2. GenerationType.SEQUENCE -> Database-Generated Sequence:
@@ -1240,6 +1241,8 @@ Let's say you have a Spring MVC application where you want to display informatio
     ```
   - When `GenerationType.SEQUENCE` is used, it indicates that the primary key of an entity will be generated from a `sequence of numbers` in the database.
   -  Databases such as `Oracle` and some other relational database management systems `(RDBMS)` support this type of identifier generation.
+  -  This strategy can also be used for attributes of `integer numeric` types.
+  -  It's also applicable to `string` types if the database supports sequences for string primary keys.
   
   ### 3. GenerationType.TABLE -> Table-Generated Sequence:
   
@@ -1264,30 +1267,60 @@ Let's say you have a Spring MVC application where you want to display informatio
   - Every time a new object is persisted, JPA consults this special table to get a new primary key value, uses it for the object being persisted, and then updates the table to mark that value as used.
   
   - This strategy is often used when databases do not support sequences or `auto-incremented` identities, or when you need finer control over the generation of primary keys.
+  -  While this strategy can technically be used with attributes of `any type`, it's commonly used with `integer numeric` types. However, it's possible to use it with `string` types as well. 
 
-### 4. GenerationType.AUTO -> Provider-Defined Strategy:
-
-  ```java
-       @Entity
-      public class Student {
-          @Id
-          @GeneratedValue(strategy = GenerationType.AUTO)
-          private Long id;
-          private String firstName;
-          private String lastName;
-          private String email;
-      
-          public Student() {
-      
-          }
-         // getter and setters
-      }
-  ```
-
-  - When using `GenerationType.AUTO`, JPA examines the capabilities of the database and selects the most appropriate primary key generation strategy from `GenerationType.IDENTITY`, `GenerationType.SEQUENCE`, or `GenerationType.TABLE`.
+  ### 4. GenerationType.AUTO -> Provider-Defined Strategy:
   
-  - If the database supports auto-incremented columns, JPA will use `GenerationType.IDENTITY`.
-  - If the database supports sequences, JPA will use `GenerationType.SEQUENCE`.
-  - If neither of the above options is available or if you prefer a more portable solution, JPA will use `GenerationType.TABLE`.
-  - GenerationType.AUTO thus offers increased flexibility and portability, as it allows your application to work across different databases without requiring significant code modifications. 
+    ```java
+         @Entity
+        public class Student {
+            @Id
+            @GeneratedValue(strategy = GenerationType.AUTO)
+            private Long id;
+            private String firstName;
+            private String lastName;
+            private String email;
+        
+            public Student() {
+        
+            }
+           // getter and setters
+        }
+    ```
+  
+    - When using `GenerationType.AUTO`, JPA examines the capabilities of the database and selects the most appropriate primary key generation strategy from `GenerationType.IDENTITY`, `GenerationType.SEQUENCE`, or `GenerationType.TABLE`.
+    
+    - If the database supports auto-incremented columns, JPA will use `GenerationType.IDENTITY`.
+    - If the database supports sequences, JPA will use `GenerationType.SEQUENCE`.
+    - If neither of the above options is available or if you prefer a more portable solution, JPA will use `GenerationType.TABLE`.
+    - GenerationType.AUTO thus offers increased flexibility and portability, as it allows your application to work across different databases without requiring significant code modifications. 
+
+
+  ### 5. GenerationType.UUID -> Developer-Defined Strategy:
+  
+    ```java
+        @Entity
+        public class Student {
+            @Id
+            @GeneratedValue(strategy = GenerationType.UUID)
+            private UUID id;
+            private String firstName;
+            private String lastName;
+            private String email;
+        
+            public Student() {
+        
+            }
+           // getter and setters
+        }
+    ```
+  
+    - When using `GenerationType.AUTO`, JPA examines the capabilities of the database and selects the most appropriate primary key generation strategy from `GenerationType.IDENTITY`, `GenerationType.SEQUENCE`, or `GenerationType.TABLE`.
+    
+    - If the database supports auto-incremented columns, JPA will use `GenerationType.IDENTITY`.
+    - If the database supports sequences, JPA will use `GenerationType.SEQUENCE`.
+    - If neither of the above options is available or if you prefer a more portable solution, JPA will use `GenerationType.TABLE`.
+    - GenerationType.AUTO thus offers increased flexibility and portability, as it allows your application to work across different databases without requiring significant code modifications.
+    - `GenerationType.UUID` is specifically designed for generating UUID (Universally Unique Identifier) values, which are typically represented as `strings`.
+  
 
