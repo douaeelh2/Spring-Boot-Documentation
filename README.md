@@ -1320,7 +1320,7 @@ Let's say you have a Spring MVC application where you want to display informatio
     - If the database supports auto-incremented columns, JPA will use `GenerationType.IDENTITY`.
     - If the database supports sequences, JPA will use `GenerationType.SEQUENCE`.
     - If neither of the above options is available or if you prefer a more portable solution, JPA will use `GenerationType.TABLE`.
-    - GenerationType.AUTO thus offers increased flexibility and portability, as it allows your application to work across different databases without requiring significant code modifications.
+    - `GenerationType.AUTO` thus offers increased flexibility and portability, as it allows your application to work across different databases without requiring significant code modifications.
     - `GenerationType.UUID` is specifically designed for generating UUID (Universally Unique Identifier) values, which are typically represented as `strings`.
   
 
