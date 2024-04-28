@@ -968,7 +968,7 @@ is an annotation used in Spring Framework for handling exceptions in Spring MVC 
    ```
 
 
-### 9. @ResponseStatus 
+### 10. @ResponseStatus 
 - This annotation in Spring MVC is used to specify the HTTP `status` code that should be returned by a controller method when it completes its execution. It allows you to customize the HTTP status code of the response without explicitly returning a `ResponseEntity` object.
 
     ```java
@@ -1025,7 +1025,7 @@ is an annotation used in Spring Framework for handling exceptions in Spring MVC 
   - `HttpStatus.NOT_FOUND:` Indicates that the requested resource could not be found `(HTTP status code 404)`.
   - Additionally, an exception handler method (handleProductNotFoundException) is annotated with @ExceptionHandler and `@ResponseStatus(HttpStatus.NOT_FOUND)` to handle ProductNotFoundException. This method returns a custom message with HTTP status code `404` (Not Found) when the exception occurs.
 
-### 10. @ModelAttribute
+### 11. @ModelAttribute
 is an annotation in Spring MVC framework used to bind a method parameter or method return value to a named model attribute and expose it to the view layer. It's commonly used in Spring MVC controllers to prepare data before rendering a view.
 
 Let's say you have a Spring MVC application where you want to display information about a user. You have a User class with attributes such as name, email, and age. Now, you want to populate this user object and pass it to your view for rendering.
@@ -1063,6 +1063,62 @@ Let's say you have a Spring MVC application where you want to display informatio
 - `@ModelAttribute("user")` annotation on the `populateUser()` method ensures that the returned User object is added to the model with the name "user".
 - When the `getUser()` method is invoked, it retrieves the user details (from a database or some service) and adds it to the ModelAndView with the name "userView".
 - The view (e.g., userView.jsp or userView.html) can access the user object using the name "user" and render its attributes like name, email, and age.
+
+  ### 12. @Repository
+- The `@Repository` annotation in Spring MVC is used to indicate that a particular class is a repository component. It is typically used to mark classes that are responsible for interacting with the database, performing CRUD (Create, Read, Update, Delete) operations, and handling data access logic.
+  
+  Here's what @Repository does:
+
+- Declares a Bean: Similar to @Service, when you annotate a class with @Repository, Spring container automatically detects it during component scanning and creates a bean of the annotated class.
+- Data Access Logic: `@Repository` classes typically contain methods for interacting with the underlying database. These methods may include querying data, saving data, updating data, and deleting data.
+- Exception Translation: `@Repository` classes are often used to catch database-specific exceptions and translate them into Spring's generic `DataAccessException`. This allows for cleaner exception handling in the service layer.
+- Spring Data JPA Integration: If you're using Spring Data JPA, `@Repository` can be used alongside Spring Data repository interfaces to take advantage of Spring Data's repository abstraction, which provides built-in methods for common data access operations.
+
+  ```java
+     @Repository
+    interface PostRepository extends JpaRepository < Post, Integer > {    
+    }
+  ```
+  
+- `PostRepository` interface and annotate with @Repository annotation, note Spring Data JPA automatically provides an implementation for the above interface.
+
+  ### 13. @Service
+  
+- `@Service` annotation serves as a specialization of `@Component`, allowing for implementation classes to be autodetected through classpath scanning.
+- is used to indicate that a particular class is a service component in the Spring application context.
+- Declares a Bean: When you annotate a class with `@Service`, Spring container automatically detects it during component scanning and creates a `bean` of the annotated class.
+- Business Logic: Typically, `@Service` is used to mark classes that contain business logic. These classes encapsulate the application's business logic and are responsible for carrying out specific tasks, such as data manipulation, calculations, or interaction with a database.
+- Dependency Injection:` @Service` classes can be injected into other Spring-managed components, like controllers or other services, using dependency injection. This promotes modularity and separation of concerns in your application.
+- Exception Translation: `@Service` classes are often a good place to handle business-specific exceptions and translate them into meaningful error messages or appropriate HTTP status codes.
+
+  ```java
+     @Service
+    public class PostService {
+        @Autowired
+        private PostRepository postRepository;
+    
+        public List<Post> getAllPosts() {
+            return postRepository.findAll();
+        }
+    
+        public Post getPostById(Long id) {
+            return postRepository.findById(id).orElse(null);
+        }
+    
+        public void savePost(Post post) {
+            postRepository.save(post);
+        }
+    
+        public void deletePost(Long id) {
+            postRepository.deleteById(id);
+        }
+    
+        // Other business methods related to managing posts...
+    }
+  ```
+  
+- In this example, `PostService` is marked with `@Service`, indicating that it's a service component responsible for managing posts. It interacts with a `PostRepository` to perform database operations related to posts, such as retrieving, saving, and deleting posts. The PostService class encapsulates the business logic for managing posts and can be injected into other components, like controllers, to handle post-related operations.
+  
 
 # 5. Spring Data  
 
