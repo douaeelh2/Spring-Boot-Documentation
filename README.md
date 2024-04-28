@@ -1067,7 +1067,7 @@ Let's say you have a Spring MVC application where you want to display informatio
   ### 12. @Repository
 - The `@Repository` annotation in Spring MVC is used to indicate that a particular class is a repository component. It is typically used to mark classes that are responsible for interacting with the database, performing CRUD (Create, Read, Update, Delete) operations, and handling data access logic.
   
-  Here's what @Repository does:
+  Here's what `@Repository` does:
 
 - Declares a Bean: Similar to @Service, when you annotate a class with @Repository, Spring container automatically detects it during component scanning and creates a bean of the annotated class.
 - Data Access Logic: `@Repository` classes typically contain methods for interacting with the underlying database. These methods may include querying data, saving data, updating data, and deleting data.
@@ -1086,6 +1086,9 @@ Let's say you have a Spring MVC application where you want to display informatio
   
 - `@Service` annotation serves as a specialization of `@Component`, allowing for implementation classes to be autodetected through classpath scanning.
 - is used to indicate that a particular class is a service component in the Spring application context.
+  
+    Here's what `@Service` does:
+
 - Declares a Bean: When you annotate a class with `@Service`, Spring container automatically detects it during component scanning and creates a `bean` of the annotated class.
 - Business Logic: Typically, `@Service` is used to mark classes that contain business logic. These classes encapsulate the application's business logic and are responsible for carrying out specific tasks, such as data manipulation, calculations, or interaction with a database.
 - Dependency Injection:` @Service` classes can be injected into other Spring-managed components, like controllers or other services, using dependency injection. This promotes modularity and separation of concerns in your application.
