@@ -1382,4 +1382,41 @@ Let's say you have a Spring MVC application where you want to display informatio
     - `GenerationType.AUTO` thus offers increased flexibility and portability, as it allows your application to work across different databases without requiring significant code modifications.
     - `GenerationType.UUID` is specifically designed for generating UUID (Universally Unique Identifier) values, which are typically represented as `strings`.
   
+## 4. @Table
+- `@Table` annotation is used to map an entity class to a `table` in a `relational database`. It allows customization of the `mapping` between the entity and its associated table by specifying attributes to define the table name, schema, etc.
+
+- Here are the main attributes used with the @Table annotation:
+
+  - name: This attribute specifies the name of the table in the database. By default, the table name is derived from the entity class name.
+  - schema: Used to specify the name of the database schema where the table resides.
+  - catalog: Defines the name of the database catalog to which the table belongs.
+  - uniqueConstraints: Allows defining unique constraints for the table. It's an array of UniqueConstraint instances.
+  - indexes: Enables defining indexes for the table. It's an array of Index instances.
+
+    ```java
+        import javax.persistence.Entity;
+        import javax.persistence.Table;
+        import javax.persistence.Index;
+        import javax.persistence.UniqueConstraint;
+        
+        @Entity(name = "Product")
+        @Table(
+            name = "products",
+            schema = "public",
+            indexes = {@Index(name = "idx_product_name", columnList = "name")},
+            uniqueConstraints = {@UniqueConstraint(columnNames = {"name", "category"})}
+        )
+        public class Product {
+            // Class fields and getters/setters methods go here
+        }
+
+    ```
+
+- The entity is named `Product`.
+- It will be mapped to a table named `products` in the `public` schema.
+- An index named `idx_product_name` is defined on the "name" column.
+- There's a unique constraint on the `name` and `category` columns.
+
+
+
 
