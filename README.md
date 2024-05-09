@@ -1432,8 +1432,10 @@ Let's say you have a Spring MVC application where you want to display informatio
   - `updatable:` Indicates whether the column should be included in SQL UPDATE statements.
   - `columnDefinition:` Allows specifying the SQL fragment that will be used when generating DDL for the column.
   - `table:` Specifies the name of the secondary table for the persistent field or property.
+ 
+  Example 1 : 
 
-   ```java
+  ```java
         import javax.persistence.Column;
         import javax.persistence.Entity;
         
@@ -1449,7 +1451,7 @@ Let's say you have a Spring MVC application where you want to display informatio
             // Other fields and methods
         }
 
-    ```
+  ```
    
   In this example:
 
@@ -1458,6 +1460,8 @@ Let's say you have a Spring MVC application where you want to display informatio
 - The unique attribute specifies that the values in this column must be unique.
 - The length attribute specifies that the length of the column for the `name` field is limited to 100 characters.
 - The price column is defined with a precision of 10 and a scale of 2. This means it can store a numeric value with up to 10 digits in total, with 2 digits reserved for the fractional part (i.e., after the decimal point).
+
+   Example 2 : 
 
    ```java
        import javax.persistence.Column;
@@ -1472,13 +1476,14 @@ Let's say you have a Spring MVC application where you want to display informatio
           // Other fields and methods
       }
 
-    ```
+   ```
   - In this example, the name column will be included in INSERT statements but not in UPDATE statements.
-    
 
-     ```java
-       import javax.persistence.Column;
-       import javax.persistence.Entity;
+  Example 3 : 
+
+  ```java
+     import javax.persistence.Column;
+     import javax.persistence.Entity;
       
       @Entity
       public class Book {
@@ -1488,16 +1493,16 @@ Let's say you have a Spring MVC application where you want to display informatio
       
           // Other fields and methods
       }
-    ```
+  ```
  - In this example, the description column will be mapped to a SQL TEXT type.
 
+ Example 4 : 
 
-
-     ```java
-        import javax.persistence.Column;
-        import javax.persistence.Entity;
-        import javax.persistence.JoinColumn;
-        import javax.persistence.OneToOne;
+ ```java
+    import javax.persistence.Column;
+    import javax.persistence.Entity;
+    import javax.persistence.JoinColumn;
+    import javax.persistence.OneToOne;
         
         @Entity
         public class Employee {
@@ -1508,5 +1513,5 @@ Let's say you have a Spring MVC application where you want to display informatio
         
             // Other fields and methods
         }
-    ```
+ ```
  - In this example, the table attribute is used to specify that the foreign key column should be in the secondary table named employee_addresses. 
