@@ -1433,7 +1433,7 @@ Let's say you have a Spring MVC application where you want to display informatio
   - `columnDefinition:` Allows specifying the SQL fragment that will be used when generating DDL for the column.
   - `table:` Specifies the name of the secondary table for the persistent field or property.
  
-Example 1 : 
+### Example 1 : 
 
 ```java
         import javax.persistence.Column;
@@ -1460,7 +1460,7 @@ In this example:
 - The length attribute specifies that the length of the column for the `name` field is limited to 100 characters.
 - The price column is defined with a precision of 10 and a scale of 2. This means it can store a numeric value with up to 10 digits in total, with 2 digits reserved for the fractional part (i.e., after the decimal point).
 
-Example 2 : 
+### Example 2 : 
 
 ```java
        import javax.persistence.Column;
@@ -1478,7 +1478,7 @@ Example 2 :
 ```
 - In this example, the name column will be included in INSERT statements but not in UPDATE statements.
 
-Example 3 : 
+### Example 3 : 
 
 ```java
      import javax.persistence.Column;
@@ -1495,7 +1495,7 @@ Example 3 :
 ```
 - In this example, the description column will be mapped to a SQL TEXT type.
 
-Example 4 : 
+### Example 4 : 
 
 ```java
     import javax.persistence.Column;
