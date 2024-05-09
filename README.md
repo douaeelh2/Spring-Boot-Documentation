@@ -1436,8 +1436,8 @@ Let's say you have a Spring MVC application where you want to display informatio
 ### Example 1 : 
 
 ```java
-        import javax.persistence.Column;
-        import javax.persistence.Entity;
+   import javax.persistence.Column;
+   import javax.persistence.Entity;
         
         @Entity
         public class Product {
@@ -1463,8 +1463,8 @@ In this example:
 ### Example 2 : 
 
 ```java
-       import javax.persistence.Column;
-       import javax.persistence.Entity;
+   import javax.persistence.Column;
+   import javax.persistence.Entity;
       
       @Entity
       public class Employee {
@@ -1481,8 +1481,8 @@ In this example:
 ### Example 3 : 
 
 ```java
-     import javax.persistence.Column;
-     import javax.persistence.Entity;
+   import javax.persistence.Column;
+   import javax.persistence.Entity;
       
       @Entity
       public class Book {
@@ -1498,10 +1498,10 @@ In this example:
 ### Example 4 : 
 
 ```java
-    import javax.persistence.Column;
-    import javax.persistence.Entity;
-    import javax.persistence.JoinColumn;
-    import javax.persistence.OneToOne;
+   import javax.persistence.Column;
+   import javax.persistence.Entity;
+   import javax.persistence.JoinColumn;
+   import javax.persistence.OneToOne;
         
         @Entity
         public class Employee {
