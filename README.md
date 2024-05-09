@@ -1387,11 +1387,11 @@ Let's say you have a Spring MVC application where you want to display informatio
 
 - Here are the main attributes used with the @Table annotation:
 
-  - name: This attribute specifies the name of the table in the database. By default, the table name is derived from the entity class name.
-  - schema: Used to specify the name of the database schema where the table resides.
-  - catalog: Defines the name of the database catalog to which the table belongs.
-  - uniqueConstraints: Allows defining unique constraints for the table. It's an array of UniqueConstraint instances.
-  - indexes: Enables defining indexes for the table. It's an array of Index instances.
+  - `name:` This attribute specifies the name of the table in the database. By default, the table name is derived from the entity class name.
+  - `schema:` Used to specify the name of the database schema where the table resides.
+  - `catalog:` Defines the name of the database catalog to which the table belongs.
+  - `uniqueConstraints:` Allows defining unique constraints for the table. It's an array of UniqueConstraint instances.
+  - `indexes:` Enables defining indexes for the table. It's an array of Index instances.
 
     ```java
         import javax.persistence.Entity;
