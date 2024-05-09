@@ -1393,11 +1393,11 @@ Let's say you have a Spring MVC application where you want to display informatio
   - `uniqueConstraints:` Allows defining unique constraints for the table. It's an array of UniqueConstraint instances.
   - `indexes:` Enables defining indexes for the table. It's an array of Index instances.
 
-    ```java
-        import javax.persistence.Entity;
-        import javax.persistence.Table;
-        import javax.persistence.Index;
-        import javax.persistence.UniqueConstraint;
+```java
+   import javax.persistence.Entity;
+   import javax.persistence.Table;
+   import javax.persistence.Index;
+   import javax.persistence.UniqueConstraint;
         
         @Entity(name = "Product")
         @Table(
@@ -1410,8 +1410,8 @@ Let's say you have a Spring MVC application where you want to display informatio
             // Class fields and getters/setters methods go here
         }
 
-    ```
-  In this example:
+```
+In this example:
 
 - The entity is named `Product`.
 - It will be mapped to a table named `products` in the `public` schema.
