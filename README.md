@@ -1411,12 +1411,102 @@ Let's say you have a Spring MVC application where you want to display informatio
         }
 
     ```
+  In this example:
 
 - The entity is named `Product`.
 - It will be mapped to a table named `products` in the `public` schema.
 - An index named `idx_product_name` is defined on the "name" column.
 - There's a unique constraint on the `name` and `category` columns.
 
+## 5. @Column
+- `@Column` annotation in Spring Data JPA is used to specify the details of a column in a database table.
+- Here's the translation of the attributes commonly used with this annotation
+  
+  - `name:` Specifies the name of the column in the table.
+  - `nullable:` Indicates whether the column can hold null values or not.
+  - `unique:` Indicates whether the column values must be unique or not.
+  - `length:` Specifies the length of the column for string-based columns.
+  - `precision:` Specifies the precision for a decimal column.
+  - `scale:` Specifies the scale for a decimal column.
+  - `insertable:` Indicates whether the column should be included in SQL INSERT statements.
+  - `updatable:` Indicates whether the column should be included in SQL UPDATE statements.
+  - `columnDefinition:` Allows specifying the SQL fragment that will be used when generating DDL for the column.
+  - `table:` Specifies the name of the secondary table for the persistent field or property.
+
+   ```java
+        import javax.persistence.Column;
+        import javax.persistence.Entity;
+        
+        @Entity
+        public class Product {
+            
+            @Column(name = "product_name", nullable = false, unique = true, length = 100)
+            private String name;
+        
+            @Column(name = "price", precision = 10, scale = 2)
+            private BigDecimal price;
+        
+            // Other fields and methods
+        }
+
+    ```
+   
+  In this example:
+
+- The name attribute specifies that the column in the table will be named `product_name`.
+- The nullable attribute indicates that the column cannot hold null values.
+- The unique attribute specifies that the values in this column must be unique.
+- The length attribute specifies that the length of the column for the `name` field is limited to 100 characters.
+- The price column is defined with a precision of 10 and a scale of 2. This means it can store a numeric value with up to 10 digits in total, with 2 digits reserved for the fractional part (i.e., after the decimal point).
+
+   ```java
+       import javax.persistence.Column;
+       import javax.persistence.Entity;
+      
+      @Entity
+      public class Employee {
+          
+          @Column(name = "employee_name", insertable = true, updatable = false)
+          private String name;
+      
+          // Other fields and methods
+      }
+
+    ```
+  - In this example, the name column will be included in INSERT statements but not in UPDATE statements.
+    
+
+     ```java
+       import javax.persistence.Column;
+       import javax.persistence.Entity;
+      
+      @Entity
+      public class Book {
+          
+          @Column(name = "description", columnDefinition = "TEXT")
+          private String description;
+      
+          // Other fields and methods
+      }
+    ```
+ - In this example, the description column will be mapped to a SQL TEXT type.
 
 
 
+     ```java
+        import javax.persistence.Column;
+        import javax.persistence.Entity;
+        import javax.persistence.JoinColumn;
+        import javax.persistence.OneToOne;
+        
+        @Entity
+        public class Employee {
+            
+            @OneToOne
+            @JoinColumn(name = "address_id", table = "employee_addresses")
+            private Address address;
+        
+            // Other fields and methods
+        }
+    ```
+ - In this example, the table attribute is used to specify that the foreign key column should be in the secondary table named employee_addresses. 
