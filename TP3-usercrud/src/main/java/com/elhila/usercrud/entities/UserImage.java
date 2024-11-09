@@ -8,14 +8,15 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UserImage {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String imageName;
+    private String imageUrl;
 
-    private String imagePath;
-
-    @OneToOne(mappedBy = "userImage")
+    @OneToOne
+    @JoinColumn(name = "user_id")
     private User user;
+
 }

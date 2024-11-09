@@ -9,15 +9,17 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
+@Table(name = "roles")
 public class Role {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String roleName;
+    private String name;
 
-    @OneToMany(mappedBy = "role" , fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "role", cascade = CascadeType.ALL)
     private List<User> users;
 
 }
+
+

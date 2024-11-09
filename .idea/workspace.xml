@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bc39aa28-e018-4402-959e-78bcedb52d3e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/controllers/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/UsercrudApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/UsercrudApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/entities/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/entities/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/entities/UserImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/entities/UserImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/repositories/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/repositories/RoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/repositories/UserImageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/repositories/UserImageRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP3-usercrud/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/TP3-usercrud/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2ny5d7wyf32DvNKbJuvNCRjCSow" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "HTTP Request.rest-api_4 | Créer une tâche.executor": "Run",
+    "HTTP Request.rest-api_4 | Récupérer toutes les tâches.executor": "Run",
+    "HTTP Request.rest-api_4 | Récupérer une tâche par ID.executor": "Run",
+    "HTTP Request.rest-api_4 | Supprimer une tâche.executor": "Run",
+    "HTTP Request.rest-api_5 | 2. Créer un nouvel utilisateur avec un rôle.executor": "Run",
+    "HTTP Request.rest-api_5 | 2. Créer un nouvel utilisateur.executor": "Run",
+    "JUnit.TaskControllerTest.testCreateTask.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.TaskcrudApplication.executor": "Run",
+    "Spring Boot.UsercrudApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/TpsSpringBoot",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Spring Boot.UsercrudApplication">
+    <configuration name="rest-api_4 | Créer une tâche" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_4.http" requestIdentifier="Créer une tâche" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="rest-api_4 | Récupérer une tâche par ID" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_4.http" index="3" requestIdentifier="Récupérer une tâche par ID" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="rest-api_4 | Supprimer une tâche" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_4.http" index="5" requestIdentifier="Supprimer une tâche" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="rest-api_5 | 2. Créer un nouvel utilisateur avec un rôle" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_5.http" index="2" requestIdentifier="2. Créer un nouvel utilisateur avec un rôle" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="rest-api_5 | 2. Créer un nouvel utilisateur" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_5.http" index="2" requestIdentifier="2. Créer un nouvel utilisateur" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="TaskcrudApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="taskcrud" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.elhila.taskcrud.TaskcrudApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UsercrudApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="usercrud" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.elhila.usercrud.UsercrudApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.rest-api_5 | 2. Créer un nouvel utilisateur" />
+        <item itemvalue="HTTP Request.rest-api_5 | 2. Créer un nouvel utilisateur avec un rôle" />
+        <item itemvalue="HTTP Request.rest-api_4 | Créer une tâche" />
+        <item itemvalue="HTTP Request.rest-api_4 | Supprimer une tâche" />
+        <item itemvalue="HTTP Request.rest-api_4 | Récupérer une tâche par ID" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.9-temurin-17.0.9-4caba194b151-0a678b09" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bc39aa28-e018-4402-959e-78bcedb52d3e" name="Changes" comment="" />
+      <created>1729932559764</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1729932559764</updated>
+      <workItem from="1729932560852" duration="3524000" />
+      <workItem from="1730230067925" duration="470000" />
+      <workItem from="1730481810893" duration="8590000" />
+      <workItem from="1730538546043" duration="3245000" />
+      <workItem from="1731001207628" duration="1522000" />
+      <workItem from="1731093530914" duration="9394000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
