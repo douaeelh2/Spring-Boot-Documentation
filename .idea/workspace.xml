@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc39aa28-e018-4402-959e-78bcedb52d3e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/controllers/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/UsercrudApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/UsercrudApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/entities/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/entities/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/entities/UserImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/entities/UserImage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/repositories/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/repositories/RoleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/repositories/UserImageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/repositories/UserImageRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/TP3-usercrud/src/main/java/com/elhila/usercrud/repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP3-usercrud/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/TP3-usercrud/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="bc39aa28-e018-4402-959e-78bcedb52d3e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,34 +35,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "HTTP Request.rest-api_4 | Créer une tâche.executor": "Run",
-    "HTTP Request.rest-api_4 | Récupérer toutes les tâches.executor": "Run",
-    "HTTP Request.rest-api_4 | Récupérer une tâche par ID.executor": "Run",
-    "HTTP Request.rest-api_4 | Supprimer une tâche.executor": "Run",
-    "HTTP Request.rest-api_5 | 2. Créer un nouvel utilisateur avec un rôle.executor": "Run",
-    "HTTP Request.rest-api_5 | 2. Créer un nouvel utilisateur.executor": "Run",
-    "JUnit.TaskControllerTest.testCreateTask.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.TaskcrudApplication.executor": "Run",
-    "Spring Boot.UsercrudApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/TpsSpringBoot",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;HTTP Request.rest-api_4 | Créer une tâche.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.rest-api_4 | Récupérer toutes les tâches.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.rest-api_4 | Récupérer une tâche par ID.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.rest-api_4 | Supprimer une tâche.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.rest-api_5 | 2. Créer un nouvel utilisateur avec un rôle.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.rest-api_5 | 2. Créer un nouvel utilisateur.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TaskControllerTest.testCreateTask.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.TaskcrudApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.UsercrudApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/TpsSpringBoot/TP2-taskcrud&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Spring Boot.UsercrudApplication">
     <configuration name="rest-api_4 | Créer une tâche" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_4.http" requestIdentifier="Créer une tâche" runType="Run single request">
       <method v="2" />
@@ -89,6 +78,17 @@
     </configuration>
     <configuration name="rest-api_5 | 2. Créer un nouvel utilisateur" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_5.http" index="2" requestIdentifier="2. Créer un nouvel utilisateur" runType="Run single request">
       <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="TaskcrudApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="taskcrud" />
@@ -135,6 +135,11 @@
       <workItem from="1730538546043" duration="3245000" />
       <workItem from="1731001207628" duration="1522000" />
       <workItem from="1731093530914" duration="9394000" />
+      <workItem from="1731144985909" duration="844000" />
+      <workItem from="1731507474806" duration="87000" />
+      <workItem from="1732952404729" duration="1201000" />
+      <workItem from="1733167827131" duration="701000" />
+      <workItem from="1733241821623" duration="45000" />
     </task>
     <servers />
   </component>
